@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Merel van Dijk — schilderkunst, fotografie, keramiek. Studio van Dijk.">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Merel van Dijk</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inclusive+Sans:ital@0;1&display=swap">
+<style>
+/* Layout: quiet dark gallery — a fixed index column on the left, single works hung loosely down the right with lots of air */
+:root{
+  --ground:#141312;   /* gallery wall, warm near-black */
+  --raise:#1d1b19;    /* panels */
+  --text:#d9d4cc;     /* primary */
+  --quiet:#7d7770;    /* nav and captions */
+  --rule:#2c2926;
+  --sans:"Inclusive Sans","Helvetica Neue",Arial,sans-serif;
+  --serif:"Instrument Serif",Georgia,serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{background:var(--ground)}
+body{background:var(--ground);color:var(--text);font:400 .95rem/1.55 var(--sans);
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+a{color:inherit}
+:focus-visible{outline:1px solid var(--text);outline-offset:4px}
+
+.bgtex{position:fixed;inset:0;z-index:0;background:var(--ground) url(bgy.jpg) center/cover no-repeat;pointer-events:none}
+.intro{position:fixed;inset:0;z-index:30;background:var(--ground);transition:opacity 2.4s ease}
+.intro video{width:100%;height:100%;object-fit:cover;display:block}
+.intro.out{opacity:0;pointer-events:none}
+.skip{position:absolute;right:max(16px,env(safe-area-inset-right,0px));bottom:max(18px,env(safe-area-inset-bottom,0px));background:none;border:1px solid rgba(236,232,225,.5);color:#ece8e1;font:500 .75rem var(--sans);letter-spacing:.06em;text-transform:uppercase;padding:.55rem .9rem;cursor:pointer}
+.skip.play{left:50%;right:auto;bottom:50%;transform:translate(-50%,50%);font-size:1rem;padding:.9rem 1.4rem;background:rgba(20,19,18,.55)}
+.skip:hover{background:rgba(20,19,18,.4)}
+.site{transition:opacity 1.8s ease 1.8s}
+body.intro-on .site{opacity:0}
+.site{position:relative;z-index:1;display:grid;grid-template-columns:minmax(200px,18rem) minmax(0,1fr);gap:clamp(2rem,5vw,6rem);max-width:1500px;margin:0 auto}
+aside{position:sticky;top:0;align-self:start;height:100vh;padding-block:1.6rem;display:flex;flex-direction:column;gap:3.2rem}
+.top{display:flex;gap:3rem;flex-wrap:wrap}
+.top a,.cats a,.links a{text-decoration:none;text-transform:uppercase;letter-spacing:.02em;color:var(--quiet);font-weight:500;transition:color .2s}
+.top a:hover,.cats a:hover,.links a:hover,.cats a[aria-current="true"]{color:var(--text)}
+.brand{display:grid;gap:.5rem}
+.top a.name,.name{text-decoration:none;color:var(--text);font-weight:500;font-size:clamp(2rem,2.8vw,2.7rem);line-height:1;letter-spacing:-.025em}
+.studio{color:var(--quiet);font-weight:500;text-transform:uppercase;letter-spacing:.06em;font-size:.78rem}
+.cats{list-style:none;margin:0;padding:0;display:grid;gap:.75rem}
+.cats a::after{content:" ›";font-weight:400}
+.links{display:grid;gap:.75rem}
+.motto{margin:auto 0 0;font-weight:400;text-transform:uppercase;font-size:clamp(1.7rem,2.3vw,2.3rem);line-height:1.05;letter-spacing:-.01em;color:#55504a}
+
+main{padding-block:clamp(3.5rem,6vw,5rem) 6rem;display:flex;flex-direction:column;gap:clamp(4rem,9vw,8rem);min-width:0}
+.work{margin:0;display:grid;gap:.7rem;max-width:100%}
+.work button{all:unset;cursor:pointer;display:block;max-width:100%}
+.work img,.work video{display:block;width:100%;height:auto;max-width:100%;outline:2px solid #ece8e1;outline-offset:8px}
+.work figcaption{display:flex;justify-content:space-between;gap:1rem;color:var(--quiet);font-size:.82rem;margin-top:.55rem}
+.work figcaption span:first-child{color:var(--text)}
+.work figcaption span:last-child{text-transform:uppercase;letter-spacing:.04em}
+/* loose hang: sizes and alignment vary down the wall */
+.w1{width:min(100%,54rem);align-self:flex-end}
+.w2{width:min(100%,34rem);align-self:flex-end;margin-right:clamp(0rem,8vw,9rem)}
+.w3{width:min(100%,44rem);align-self:flex-start}
+.w4{width:min(100%,28rem);align-self:center}
+.w5{width:min(100%,52rem);align-self:flex-end}
+.tall.w1,.tall.w5{width:min(100%,36rem)}
+.tall.w3{width:min(100%,30rem)}
+
+.about{max-width:38rem;align-self:flex-end;display:grid;gap:1rem;scroll-margin-top:3rem}
+.about h2{font-weight:500;font-size:1rem;text-transform:uppercase;letter-spacing:.02em;margin:0}
+.about p{margin:0;color:var(--text)}
+.about p.q{color:var(--quiet)}
+.req{border-top:1px solid var(--rule);padding-top:2.5rem;width:min(100%,38rem)}
+.req form{border-top:0;padding-top:.4rem}
+.req .btn{justify-self:start}
+select{font:400 .95rem var(--sans);color:var(--text);background:var(--ground);border:0;border-bottom:1px solid var(--rule);padding:.45rem 0;border-radius:0;text-transform:none;letter-spacing:0}
+select:focus{outline:none;border-bottom-color:var(--text)}
+input::placeholder,textarea::placeholder{color:#4f4a45}
+
+/* Purchase panel */
+.buy{position:fixed;inset:0;z-index:20;background:var(--ground);overflow-y:auto;
+  padding:max(1.4rem,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) max(2rem,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
+.buy-in{max-width:1500px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,22rem);gap:clamp(2rem,5vw,5rem);align-items:start}
+.work button{position:relative}
+.badge360{position:absolute;right:.6rem;top:.6rem;font-size:.72rem;letter-spacing:.06em;color:var(--text);border:1px solid rgba(236,232,225,.55);padding:.25rem .5rem;background:rgba(20,19,18,.55)}
+.spin{position:relative;cursor:grab;touch-action:pan-y;user-select:none;-webkit-user-select:none;max-width:100%}
+.spin.drag{cursor:grabbing}
+.spin img{display:block;max-width:min(100%,900px);max-height:calc(100vh - 8rem);width:auto;height:auto;outline:2px solid #ece8e1;outline-offset:8px;pointer-events:none}
+.spinhint{position:absolute;left:50%;bottom:.8rem;transform:translateX(-50%);font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;color:var(--text);background:rgba(20,19,18,.6);padding:.35rem .7rem;transition:opacity .4s;white-space:nowrap}
+.spin.used .spinhint{opacity:0}
+.buy-img{min-width:0;display:grid;place-items:center;min-height:calc(100vh - 6rem)}
+.buy-img img,.buy-img video{max-width:100%;max-height:calc(100vh - 6rem);width:auto;height:auto;display:block;outline:2px solid #ece8e1;outline-offset:8px}
+.buy-info{position:sticky;top:0;display:grid;gap:1.4rem;padding-top:.2rem}
+.close{all:unset;cursor:pointer;justify-self:end;color:var(--quiet);text-transform:uppercase;font-weight:500;letter-spacing:.02em}
+.close:hover{color:var(--text)}
+.buy h2{font-weight:500;font-size:1.05rem;margin:2rem 0 0;text-transform:uppercase;letter-spacing:.02em}
+.spec{margin:0;display:grid;grid-template-columns:auto 1fr;gap:.45rem 1.5rem;font-size:.88rem}
+.spec dt{color:var(--quiet)}
+.spec dd{margin:0}
+.btn{all:unset;cursor:pointer;text-align:center;background:var(--text);color:var(--ground);font-weight:500;text-transform:uppercase;letter-spacing:.04em;padding:.95rem 1.2rem}
+.btn:hover{background:#fff}
+.btn:focus-visible{outline:1px solid var(--text);outline-offset:3px}
+form{display:grid;gap:.9rem;border-top:1px solid var(--rule);padding-top:1.4rem}
+label{display:grid;gap:.3rem;font-size:.78rem;color:var(--quiet);text-transform:uppercase;letter-spacing:.04em}
+input,textarea{font:400 .95rem var(--sans);color:var(--text);background:transparent;border:0;border-bottom:1px solid var(--rule);padding:.45rem 0;border-radius:0;text-transform:none;letter-spacing:0}
+input:focus,textarea:focus{outline:none;border-bottom-color:var(--text)}
+textarea{min-height:4.5rem;resize:vertical}
+.note{font-size:.8rem;color:var(--quiet);margin:0}
+.done{margin:0;border-top:1px solid var(--rule);padding-top:1.4rem}
+
+.menu{display:contents}
+.menubtn{display:none}
+@media (max-width:820px){
+  .site{grid-template-columns:1fr;gap:0}
+  body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:14;background:var(--ground)}
+  aside{position:sticky;top:env(safe-area-inset-top,0px);z-index:12;height:auto;display:block;padding-block:.9rem;margin-inline:calc(-1 * max(16px,env(safe-area-inset-left,0px)));padding-inline:max(16px,env(safe-area-inset-left,0px)) max(16px,env(safe-area-inset-right,0px));background:var(--ground)}
+  .brandrow{display:flex;justify-content:space-between;align-items:center;gap:1rem;position:relative;z-index:13}
+  .brand{gap:.3rem}
+  .top a.name,.name{font-size:1.65rem}
+  .studio{font-size:.68rem}
+  .menubtn{display:block;background:none;border:1px solid var(--rule);color:var(--text);font:400 .8rem var(--sans);text-transform:uppercase;letter-spacing:.06em;padding:.55rem .9rem;cursor:pointer;-webkit-tap-highlight-color:transparent}
+  .menu{display:none}
+  .menu.open{display:flex;flex-direction:column;gap:2.2rem;position:fixed;inset:0;z-index:11;background:var(--ground);overflow-y:auto;padding:calc(env(safe-area-inset-top,0px) + 6.5rem) max(16px,env(safe-area-inset-right,0px)) calc(env(safe-area-inset-bottom,0px) + 2rem) max(16px,env(safe-area-inset-left,0px))}
+  .menu .cats,.menu .links{display:grid;gap:1rem}
+  .menu .cats a,.menu .links a{font-size:1.25rem;color:var(--text)}
+  .menu .motto{margin-top:auto;font-size:1.4rem}
+  body.menu-open{overflow:hidden}
+  main{padding-top:1.6rem;gap:3rem}
+  .work{width:100%!important;margin-right:0!important}
+  .buy-in{grid-template-columns:1fr}
+  .buy-img{min-height:0}
+  .buy-img img{max-height:70vh}
+  .buy-info{position:static}
+  .close{position:sticky;top:0}
+}
+</style>
+</head>
+<body>
+
+<div class="intro" id="intro" aria-hidden="true">
+  <video id="introVid" data-src="introE.mp4" poster="introE.jpg" muted playsinline autoplay preload="auto"></video>
+  <button type="button" class="skip" id="skip">Overslaan</button>
+</div>
+<div class="bgtex" aria-hidden="true"></div>
+<div class="site">
+  <aside>
+    <div class="brandrow"><div class="brand"><a class="name" href="#alles">Merel van Dijk.</a><span class="studio">Studio van Dijk</span></div>
+    <button type="button" class="menubtn" id="menuBtn" aria-expanded="false" aria-controls="menu">Menu</button></div>
+    <div class="menu" id="menu">
+    <ul class="cats">
+      <li><a href="#schilderkunst" data-cat="schilderkunst">Schilderkunst</a></li>
+      <li><a href="#fotografie" data-cat="fotografie">Fotografie</a></li>
+      <li><a href="#video" data-cat="video">Video</a></li>
+      <li><a href="#keramiek" data-cat="keramiek">Keramiek</a></li>
+      <li><a href="#tekeningen" data-cat="tekeningen">Tekeningen</a></li>
+      <li><a href="#textiel" data-cat="textiel">Textiel</a></li>
+    </ul>
+    <div class="links"><a href="#over">Over</a><a href="#aanvragen">Aanvragen</a><a href="#contact">Email</a><a href="#contact">Instagram</a></div>
+    <p class="motto">Droom in de branding.</p>
+    </div>
+  </aside>
+
+  <main id="wall">
+
+    <figure class="work" data-cat="schilderkunst" data-catlabel="Schilderkunst" data-tech="Olieverf op doek" data-t="Stenen in stroming"><button type="button" aria-label="Stenen in stroming bekijken en kopen"><img src="img/q1732.jpg" alt="Schilderij: lichte stenen onder bewegend water in blauw, groen en oker" width="1800" height="1488" loading="lazy" decoding="async"></button><figcaption><span>Stenen in stroming</span><span>Schilderkunst</span></figcaption></figure>
+    <figure class="work" data-cat="fotografie" data-catlabel="Fotografie" data-tech="Fotografie, print op aanvraag" data-t="Mosselbank"><button type="button" aria-label="Mosselbank bekijken en kopen"><img src="img/02.jpg" alt="Close-up van mosselen met zeesla" width="1600" height="1067" loading="lazy" decoding="async"></button><figcaption><span>Mosselbank</span><span>Fotografie</span></figcaption></figure>
+    <figure class="work" data-cat="keramiek" data-catlabel="Keramiek" data-tech="Klei" data-t="Holle vorm"><button type="button" aria-label="Holle vorm bekijken en kopen"><img src="img/03.jpg" alt="Ongebakken kleisculptuur met grote holtes en een gedeukt oppervlak" width="1332" height="870" loading="lazy" decoding="async"></button><figcaption><span>Holle vorm</span><span>Keramiek</span></figcaption></figure>
+    <figure class="work tall" data-cat="fotografie" data-catlabel="Fotografie" data-tech="Fotografie, print op aanvraag" data-t="Maan boven de rotsen"><button type="button" aria-label="Maan boven de rotsen bekijken en kopen"><img src="img/04.jpg" alt="Donkere rotsen aan zee in de schemering, met een smalle maan" width="867" height="1300" loading="lazy" decoding="async"></button><figcaption><span>Maan boven de rotsen</span><span>Fotografie</span></figcaption></figure>
+    <figure class="work" data-cat="tekeningen" data-catlabel="Tekeningen" data-tech="Potlood op papier" data-t="Rots en zee"><button type="button" aria-label="Rots en zee bekijken en kopen"><img src="img/05.jpg" alt="Schetsboek met een potloodtekening van een rotswand en de zee" width="1033" height="875" loading="lazy" decoding="async"></button><figcaption><span>Rots en zee</span><span>Tekeningen</span></figcaption></figure>
+    <figure class="work" data-cat="schilderkunst" data-catlabel="Schilderkunst" data-tech="Olieverf op doek" data-t="Kust bij maanlicht"><button type="button" aria-label="Kust bij maanlicht bekijken en kopen"><img src="img/q1730.jpg" alt="Schilderij: een donkere kust met kliffen en schuimende golven onder een blauwe maanlichthemel" width="1800" height="1543" loading="lazy" decoding="async"></button><figcaption><span>Kust bij maanlicht</span><span>Schilderkunst</span></figcaption></figure>
+    <figure class="work" data-cat="fotografie" data-catlabel="Fotografie" data-tech="Fotografie, print op aanvraag" data-t="Zeepokken"><button type="button" aria-label="Zeepokken bekijken en kopen"><img src="img/06.jpg" alt="Rots bedekt met zeepokken, schaalhoorns en zeewier" width="1600" height="1067" loading="lazy" decoding="async"></button><figcaption><span>Zeepokken</span><span>Fotografie</span></figcaption></figure>
+    <figure class="work" data-cat="video" data-catlabel="Video" data-tech="Video" data-t="Mosselen en zand" data-video="vid/17686cd6-IMG_7273.mp4"><button type="button" aria-label="Mosselen en zand bekijken en kopen"><video data-src="vid/17686cd6-IMG_7273.mp4" poster="vid/17686cd6-IMG_7273.jpg" width="1024" height="576" muted loop playsinline autoplay preload="metadata" aria-label="Video: water beweegt over kalksteen met mosselen"></video></button><figcaption><span>Mosselen en zand</span><span>Video</span></figcaption></figure>
+    <figure class="work tall" data-cat="schilderkunst" data-catlabel="Schilderkunst" data-tech="Olieverf op doek" data-t="Poreuze vorm"><button type="button" aria-label="Poreuze vorm bekijken en kopen"><img src="img/q1734.jpg" alt="Schilderij: een lichtgeel poreus object tegen een donkere achtergrond" width="1571" height="1800" loading="lazy" decoding="async"></button><figcaption><span>Poreuze vorm</span><span>Schilderkunst</span></figcaption></figure>
+    <figure class="work" data-cat="fotografie" data-catlabel="Fotografie" data-tech="Fotografie, print op aanvraag" data-t="Branding"><button type="button" aria-label="Branding bekijken en kopen"><img src="img/09.jpg" alt="Kalksteen met mosselen aan de rand van de branding" width="1600" height="1067" loading="lazy" decoding="async"></button><figcaption><span>Branding</span><span>Fotografie</span></figcaption></figure>
+    <figure class="work tall" data-cat="tekeningen" data-catlabel="Tekeningen" data-tech="Potlood op papier" data-t="Krastekeningen"><button type="button" aria-label="Krastekeningen bekijken en kopen"><img src="img/10.jpg" alt="Vijf witte krastekeningen op zwart papier" width="402" height="810" loading="lazy" decoding="async"></button><figcaption><span>Krastekeningen</span><span>Tekeningen</span></figcaption></figure>
+    <figure class="work" data-cat="fotografie" data-catlabel="Fotografie" data-tech="Fotografie, print op aanvraag" data-t="Steen op het strand"><button type="button" aria-label="Steen op het strand bekijken en kopen"><img src="img/11.jpg" alt="Steen op het zand, bedekt met zeepokken en groen wier" width="1600" height="1013" loading="lazy" decoding="async"></button><figcaption><span>Steen op het strand</span><span>Fotografie</span></figcaption></figure>
+    <figure class="work tall" data-cat="schilderkunst" data-catlabel="Schilderkunst" data-tech="Olieverf op doek" data-t="Golf op de rots"><button type="button" aria-label="Golf op de rots bekijken en kopen"><img src="img/q1733.jpg" alt="Schilderij: een golf breekt wit schuimend over een groene rots bij een okergeel strand" width="1512" height="1800" loading="lazy" decoding="async"></button><figcaption><span>Golf op de rots</span><span>Schilderkunst</span></figcaption></figure>
+    <figure class="work" data-cat="schilderkunst" data-catlabel="Schilderkunst" data-tech="Olieverf op doek" data-t="Vliegers in het veld"><button type="button" aria-label="Vliegers in het veld bekijken en kopen"><img src="img/12.jpg" alt="Schilderij: twee bruine vliegers in een droog veld voor een bosrand" width="1600" height="1168" loading="lazy" decoding="async"></button><figcaption><span>Vliegers in het veld</span><span>Schilderkunst</span></figcaption></figure>
+    <figure class="work tall" data-cat="fotografie" data-catlabel="Fotografie" data-tech="Fotografie, print op aanvraag" data-t="Rotswand in mist"><button type="button" aria-label="Rotswand in mist bekijken en kopen"><img src="img/13.jpg" alt="Rotswand vol mosselen en wier naast de branding in de mist" width="867" height="1300" loading="lazy" decoding="async"></button><figcaption><span>Rotswand in mist</span><span>Fotografie</span></figcaption></figure>
+    <figure class="work" data-cat="video" data-catlabel="Video" data-tech="Video" data-t="Rots in de mist" data-video="vid/440c2fc6-IMG_7310.mp4"><button type="button" aria-label="Rots in de mist bekijken en kopen"><video data-src="vid/440c2fc6-IMG_7310.mp4" poster="vid/440c2fc6-IMG_7310.jpg" width="1024" height="576" muted loop playsinline autoplay preload="metadata" aria-label="Video: begroeide rots in helder water, met mist erachter"></video></button><figcaption><span>Rots in de mist</span><span>Video</span></figcaption></figure>
+    <figure class="work" data-cat="keramiek" data-catlabel="Keramiek" data-tech="Steengoed, gespikkeld glazuur" data-t="Testkopje (360°)" data-spin="spin/kopje" data-frames="36"><button type="button" aria-label="Testkopje bekijken in 360 graden"><img src="spin/kopje/00.jpg" alt="Gerenderd testkopje met blauwgrijs gespikkeld glazuur en een onverglaasde voet" width="460" height="400" loading="lazy" decoding="async"><span class="badge360">360°</span></button><figcaption><span>Testkopje (360°)</span><span>Keramiek</span></figcaption></figure>
+    <figure class="work tall" data-cat="keramiek" data-catlabel="Keramiek" data-tech="Klei" data-t="Paard"><button type="button" aria-label="Paard bekijken en kopen"><img src="img/15.jpg" alt="Keramiek: een gestileerd paard, wit en grijsblauw geglazuurd" width="338" height="364" loading="lazy" decoding="async"></button><figcaption><span>Paard</span><span>Keramiek</span></figcaption></figure>
+    <figure class="work" data-cat="fotografie" data-catlabel="Fotografie" data-tech="Fotografie, print op aanvraag" data-t="Kokerwormrif"><button type="button" aria-label="Kokerwormrif bekijken en kopen"><img src="img/16.jpg" alt="Honingraatstructuur van kokerwormen tussen mosselen en zeesla" width="1600" height="1067" loading="lazy" decoding="async"></button><figcaption><span>Kokerwormrif</span><span>Fotografie</span></figcaption></figure>
+    <figure class="work tall" data-cat="tekeningen" data-catlabel="Tekeningen" data-tech="Potlood op papier" data-t="Modelstudie I"><button type="button" aria-label="Modelstudie I bekijken en kopen"><img src="img/17.jpg" alt="Potloodstudies van een zittend en gebogen model" width="1165" height="1290" loading="lazy" decoding="async"></button><figcaption><span>Modelstudie I</span><span>Tekeningen</span></figcaption></figure>
+    <figure class="work" data-cat="fotografie" data-catlabel="Fotografie" data-tech="Fotografie, print op aanvraag" data-t="Baai met kelp"><button type="button" aria-label="Baai met kelp bekijken en kopen"><img src="img/18.jpg" alt="Kleine baai met kelp op het zand onder kalkstenen rotsen" width="1600" height="1067" loading="lazy" decoding="async"></button><figcaption><span>Baai met kelp</span><span>Fotografie</span></figcaption></figure>
+    <figure class="work tall" data-cat="textiel" data-catlabel="Textiel" data-tech="Vilt en wol" data-t="Vilt"><button type="button" aria-label="Vilt bekijken en kopen"><img src="img/19.jpg" alt="Werk van losse wol in zand, grijs, lichtgroen en donkerblauw" width="1065" height="1300" loading="lazy" decoding="async"></button><figcaption><span>Vilt</span><span>Textiel</span></figcaption></figure>
+    <figure class="work" data-cat="fotografie" data-catlabel="Fotografie" data-tech="Fotografie, print op aanvraag" data-t="Schuim"><button type="button" aria-label="Schuim bekijken en kopen"><img src="img/20.jpg" alt="Schuimende golven over zand en kalksteen met mosselen" width="1600" height="1067" loading="lazy" decoding="async"></button><figcaption><span>Schuim</span><span>Fotografie</span></figcaption></figure>
+    <figure class="work" data-cat="video" data-catlabel="Video" data-tech="Video" data-t="Wier in de stroming" data-video="vid/dad237b7-IMG_7288.mp4"><button type="button" aria-label="Wier in de stroming bekijken en kopen"><video data-src="vid/dad237b7-IMG_7288.mp4" poster="vid/dad237b7-IMG_7288.jpg" width="1024" height="576" muted loop playsinline autoplay preload="metadata" aria-label="Video: lang bruin wier beweegt in stromend water"></video></button><figcaption><span>Wier in de stroming</span><span>Video</span></figcaption></figure>
+    <figure class="work tall" data-cat="schilderkunst" data-catlabel="Schilderkunst" data-tech="Olieverf op doek" data-t="Palmen"><button type="button" aria-label="Palmen bekijken en kopen"><img src="img/q1735.jpg" alt="Schilderij: twee palmen in groen boven een okergele band" width="1436" height="1800" loading="lazy" decoding="async"></button><figcaption><span>Palmen</span><span>Schilderkunst</span></figcaption></figure>
+    <figure class="work" data-cat="fotografie" data-catlabel="Fotografie" data-tech="Fotografie, print op aanvraag" data-t="Uitgesleten kalksteen"><button type="button" aria-label="Uitgesleten kalksteen bekijken en kopen"><img src="img/23.jpg" alt="Gelaagde kalksteen met holtes en kleine mosselen" width="1600" height="1067" loading="lazy" decoding="async"></button><figcaption><span>Uitgesleten kalksteen</span><span>Fotografie</span></figcaption></figure>
+    <figure class="work" data-cat="tekeningen" data-catlabel="Tekeningen" data-tech="Potlood op papier" data-t="Strand"><button type="button" aria-label="Strand bekijken en kopen"><img src="img/24.jpg" alt="Schetsboek met potloodschetsen van een kust en golven" width="1105" height="955" loading="lazy" decoding="async"></button><figcaption><span>Strand</span><span>Tekeningen</span></figcaption></figure>
+    <figure class="work" data-cat="fotografie" data-catlabel="Fotografie" data-tech="Fotografie, print op aanvraag" data-t="Baai"><button type="button" aria-label="Baai bekijken en kopen"><img src="img/25.jpg" alt="Turquoise baai achter een rotsplateau vol mosselen" width="1600" height="1067" loading="lazy" decoding="async"></button><figcaption><span>Baai</span><span>Fotografie</span></figcaption></figure>
+    <figure class="work" data-cat="keramiek" data-catlabel="Keramiek" data-tech="Klei" data-t="Vier kommen"><button type="button" aria-label="Vier kommen bekijken en kopen"><img src="img/26.jpg" alt="Vier ongebakken kommen van klei, op een rij" width="1600" height="447" loading="lazy" decoding="async"></button><figcaption><span>Vier kommen</span><span>Keramiek</span></figcaption></figure>
+    <figure class="work" data-cat="fotografie" data-catlabel="Fotografie" data-tech="Fotografie, print op aanvraag" data-t="Over het rif"><button type="button" aria-label="Over het rif bekijken en kopen"><img src="img/27.jpg" alt="Zeewater stroomt over rotsen met wier en kokerwormen" width="1600" height="1067" loading="lazy" decoding="async"></button><figcaption><span>Over het rif</span><span>Fotografie</span></figcaption></figure>
+    <figure class="work" data-cat="video" data-catlabel="Video" data-tech="Video" data-t="Laagwater" data-video="vid/ffdb5078-IMG_7312.mp4"><button type="button" aria-label="Laagwater bekijken en kopen"><video data-src="vid/ffdb5078-IMG_7312.mp4" poster="vid/ffdb5078-IMG_7312.jpg" width="1024" height="576" muted loop playsinline autoplay preload="metadata" aria-label="Video: wier en zand onder bewegend water"></video></button><figcaption><span>Laagwater</span><span>Video</span></figcaption></figure>
+    <figure class="work" data-cat="schilderkunst" data-catlabel="Schilderkunst" data-tech="Olieverf op doek" data-t="Blauw"><button type="button" aria-label="Blauw bekijken en kopen"><img src="img/29.jpg" alt="Groot schilderij in diep blauw en wit op gekreukt papier" width="1034" height="637" loading="lazy" decoding="async"></button><figcaption><span>Blauw</span><span>Schilderkunst</span></figcaption></figure>
+    <figure class="work" data-cat="fotografie" data-catlabel="Fotografie" data-tech="Fotografie, print op aanvraag" data-t="Wier bij laagwater"><button type="button" aria-label="Wier bij laagwater bekijken en kopen"><img src="img/30.jpg" alt="Bruin wier en schuim op een rotsplateau bij laagwater" width="1600" height="1067" loading="lazy" decoding="async"></button><figcaption><span>Wier bij laagwater</span><span>Fotografie</span></figcaption></figure>
+    <figure class="work" data-cat="tekeningen" data-catlabel="Tekeningen" data-tech="Potlood op papier" data-t="Portretten"><button type="button" aria-label="Portretten bekijken en kopen"><img src="img/31.jpg" alt="Schetsboek met twee potloodportretten" width="1066" height="777" loading="lazy" decoding="async"></button><figcaption><span>Portretten</span><span>Tekeningen</span></figcaption></figure>
+    <figure class="work" data-cat="fotografie" data-catlabel="Fotografie" data-tech="Fotografie, print op aanvraag" data-t="Kelp in de branding"><button type="button" aria-label="Kelp in de branding bekijken en kopen"><img src="img/32.jpg" alt="Kelp drijft in kolkend water voor een rotswand" width="1600" height="1067" loading="lazy" decoding="async"></button><figcaption><span>Kelp in de branding</span><span>Fotografie</span></figcaption></figure>
+    <figure class="work tall" data-cat="tekeningen" data-catlabel="Tekeningen" data-tech="Potlood op papier" data-t="Modelstudie II"><button type="button" aria-label="Modelstudie II bekijken en kopen"><img src="img/33.jpg" alt="Potloodstudies van staande en gebogen figuren" width="871" height="1300" loading="lazy" decoding="async"></button><figcaption><span>Modelstudie II</span><span>Tekeningen</span></figcaption></figure>
+    <figure class="work" data-cat="fotografie" data-catlabel="Fotografie" data-tech="Fotografie, print op aanvraag" data-t="Mosselrots"><button type="button" aria-label="Mosselrots bekijken en kopen"><img src="img/34.jpg" alt="Uitgesleten rots met clusters mosselen" width="1600" height="1067" loading="lazy" decoding="async"></button><figcaption><span>Mosselrots</span><span>Fotografie</span></figcaption></figure>
+    <figure class="work tall" data-cat="tekeningen" data-catlabel="Tekeningen" data-tech="Potlood op papier" data-t="Tuin"><button type="button" aria-label="Tuin bekijken en kopen"><img src="img/35.jpg" alt="Schetsboek met potloodschetsen van planten en een hek" width="758" height="829" loading="lazy" decoding="async"></button><figcaption><span>Tuin</span><span>Tekeningen</span></figcaption></figure>
+    <figure class="work" data-cat="fotografie" data-catlabel="Fotografie" data-tech="Fotografie, print op aanvraag" data-t="Getijdenpoel"><button type="button" aria-label="Getijdenpoel bekijken en kopen"><img src="img/36.jpg" alt="Rotsplateau met mosselen en een getijdenpoel aan helder water" width="1600" height="1200" loading="lazy" decoding="async"></button><figcaption><span>Getijdenpoel</span><span>Fotografie</span></figcaption></figure>
+    <section class="about" id="over">
+      <h2>Over Merel</h2>
+      <p>Merel van Dijk is een ervaren kunstenaar in schilderkunst en keramiek. Fotografie is haar manier van kijken: ze gaat dicht op rots, water en zand staan, tot er alleen structuur overblijft.</p>
+      <p class="q">Werk kopen of een opdracht bespreken? Klik op een werk om het aan te vragen.</p>
+      <p class="q" id="contact">Email en Instagram volgen. Dit is een testversie.</p>
+    </section>
+    <section class="about req" id="aanvragen">
+      <h2>Aanvragen</h2>
+      <p>Een werk in opdracht, voor je huis, je bedrijf of als cadeau. Vertel wat je voor ogen hebt, dan neemt Merel contact op om de ideeën, het formaat en de prijs te bespreken.</p>
+      <form id="rForm">
+        <label for="rType">Soort werk
+          <select id="rType" required>
+            <option value="">Kies een soort werk</option>
+            <option>Schilderij</option>
+            <option>Keramiek</option>
+            <option>Fotografie</option>
+            <option>Iets anders</option>
+          </select>
+        </label>
+        <label for="rSize">Formaat of afmetingen<input id="rSize" placeholder="Bijvoorbeeld 80 × 100 cm"></label>
+        <label for="rBudget">Budget (optioneel)<input id="rBudget" placeholder="Bijvoorbeeld € 500 – 1.000"></label>
+        <label for="rIdea">Je idee<textarea id="rIdea" required placeholder="Onderwerp, kleuren, waar het komt te hangen of staan"></textarea></label>
+        <label for="rName">Naam<input id="rName" required autocomplete="name"></label>
+        <label for="rMail">E-mail<input id="rMail" type="email" required autocomplete="email"></label>
+        <button class="btn" type="submit">Aanvraag versturen</button>
+      </form>
+      <p class="done" id="rDone" hidden>Bedankt voor je aanvraag. Dit is een testversie, dus de aanvraag is nog niet verstuurd.</p>
+    </section>
+  </main>
+</div>
+
+<div class="buy" id="buy" hidden role="dialog" aria-modal="true" aria-labelledby="bTitle">
+  <div class="buy-in">
+    <div class="buy-img"><img id="bImg" alt=""><div class="spin" id="bSpin" hidden><img id="bSpinImg" alt="" draggable="false"><span class="spinhint">Sleep om te draaien</span></div><video id="bVid" hidden controls loop muted playsinline></video></div>
+    <div class="buy-info">
+      <button class="close" type="button" id="bClose">Sluiten ✕</button>
+      <h2 id="bTitle"></h2>
+      <dl class="spec">
+        <dt>Categorie</dt><dd id="bCat"></dd>
+        <dt>Techniek</dt><dd id="bTech"></dd>
+        <dt>Prijs</dt><dd>Op aanvraag</dd>
+      </dl>
+      <button class="btn" type="button" id="bBuy">Dit werk kopen</button>
+      <form id="bForm" hidden>
+        <label for="bName">Naam<input id="bName" required autocomplete="name"></label>
+        <label for="bMail">E-mail<input id="bMail" type="email" required autocomplete="email"></label>
+        <label for="bMsg">Bericht (optioneel)<textarea id="bMsg"></textarea></label>
+        <button class="btn" type="submit">Aanvraag versturen</button>
+        <p class="note">Merel neemt contact op over prijs, levering en betaling.</p>
+      </form>
+      <p class="done" id="bDone" hidden>Bedankt. Dit is een testversie, dus de aanvraag is nog niet verstuurd.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+// iOS Safari only plays video files it can range-request; load each file whole and play it from memory.
+const blobCache={};
+function loadVideo(v){const s=v.dataset.src;if(!s)return Promise.resolve(v);
+  if(!blobCache[s])blobCache[s]=fetch(s).then(r=>{if(!r.ok)throw 0;return r.blob()}).then(b=>URL.createObjectURL(b)).catch(()=>s);
+  return blobCache[s].then(u=>{v.muted=true;v.src=u;return v});}
+// Intro: water video once per visit, then dissolves into the contour background
+(function(){
+  const intro=document.getElementById('intro'),v=document.getElementById('introVid');
+  let seen=false;try{seen=sessionStorage.getItem('introSeen')==='1'}catch(e){}
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(seen||reduce){intro.remove();return;}
+  document.body.classList.add('intro-on');
+  let done=false;
+  function end(){if(done)return;done=true;try{sessionStorage.setItem('introSeen','1')}catch(e){}
+    intro.classList.add('out');document.body.classList.remove('intro-on');
+    setTimeout(()=>intro.remove(),2600);}
+  v.addEventListener('timeupdate',()=>{if(v.duration&&v.currentTime>v.duration-0.12)end()});
+  v.addEventListener('ended',end);v.addEventListener('error',end);
+  document.getElementById('skip').addEventListener('click',e=>{if(!e.currentTarget.onclick)end()});
+  intro.addEventListener('click',e=>{if(e.target===v)end()});
+  addEventListener('keydown',e=>{if(e.key==='Escape')end()});
+  const skip=document.getElementById('skip');
+  let started=false;
+  function tryPlay(){v.muted=true;return v.play().then(()=>{started=true;clearTimeout(idle);setTimeout(end,9000);});}
+  // Without a play within 6s (slow network, Low Power Mode) the site opens anyway; a tap starts the film.
+  const idle=setTimeout(()=>{if(!started)showPlay()},2500);
+  function showPlay(){if(started||done)return;skip.textContent='▶ Afspelen';skip.classList.add('play');
+    skip.onclick=e=>{e.stopPropagation();tryPlay().then(()=>{skip.textContent='Overslaan';skip.classList.remove('play');skip.onclick=null}).catch(()=>{skip.textContent='Video kan niet afspelen · verder';skip.onclick=end})};}
+  intro.addEventListener('touchend',()=>{if(!started)tryPlay().catch(()=>{})},{passive:true});
+  loadVideo(v).then(()=>tryPlay()).catch(showPlay);
+})();
+// Category filter via #hash
+const works=[...document.querySelectorAll('.work')];
+const about=document.getElementById('over');
+function route(){
+  const h=location.hash.slice(1);
+  const cats=['schilderkunst','fotografie','video','keramiek','tekeningen','textiel'];
+  const cat=cats.includes(h)?h:null;
+  let n=0;
+  works.forEach(w=>{const show=!cat||w.dataset.cat===cat;w.hidden=!show;if(show){w.classList.remove('w1','w2','w3','w4','w5');w.classList.add('w'+(n%5+1));n++;}});
+  document.querySelectorAll('.cats a').forEach(a=>a.setAttribute('aria-current',a.dataset.cat===cat?'true':'false'));
+  if(cat||h==='alles'||!h) scrollTo(0,0);
+}
+addEventListener('hashchange',route);route();
+// Work videos: load when they come near the screen, play while visible
+(function(){const vids=[...document.querySelectorAll('.work video')];
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches){vids.forEach(v=>{v.removeAttribute('autoplay');v.controls=true;loadVideo(v)});return;}
+  const io=new IntersectionObserver(es=>es.forEach(e=>{const v=e.target;
+    if(e.isIntersecting)loadVideo(v).then(()=>v.play()).catch(()=>{});else v.pause();}),{rootMargin:'300px 0px'});
+  vids.forEach(v=>io.observe(v));})();
+// Mobile menu
+(function(){const b=document.getElementById('menuBtn'),m=document.getElementById('menu');
+  function set(o){m.classList.toggle('open',o);document.body.classList.toggle('menu-open',o);b.setAttribute('aria-expanded',o);b.textContent=o?'Sluiten':'Menu';}
+  b.addEventListener('click',()=>set(!m.classList.contains('open')));
+  m.addEventListener('click',e=>{if(e.target.closest('a'))set(false)});
+  addEventListener('keydown',e=>{if(e.key==='Escape')set(false)});
+  matchMedia('(min-width:821px)').addEventListener('change',()=>set(false));
+})();
+
+// 360° viewer: a series of photos around the work; drag sideways to turn it
+const spinEl=document.getElementById('bSpin'),spinImg=document.getElementById('bSpinImg');
+let spin=null;
+function stopSpin(){if(spin){cancelAnimationFrame(spin.raf);spin=null}spinEl.hidden=true;spinEl.classList.remove('used','drag');}
+function startSpin(base,n,alt){
+  const urls=[...Array(n)].map((_,i)=>`${base}/${String(i).padStart(2,'0')}.jpg`);
+  urls.forEach(u=>{const im=new Image();im.src=u});
+  spin={n,urls,f:0,raf:0,auto:!matchMedia('(prefers-reduced-motion: reduce)').matches,last:0};
+  spinImg.src=urls[0];spinImg.alt=alt+' (360°, sleep om te draaien)';spinEl.hidden=false;
+  const tick=ts=>{if(!spin)return;if(spin.auto&&ts-spin.last>110){spin.last=ts;show(spin.f+1)}spin.raf=requestAnimationFrame(tick)};
+  spin.raf=requestAnimationFrame(tick);
+}
+function show(f){if(!spin)return;spin.f=((Math.round(f)%spin.n)+spin.n)%spin.n;spinImg.src=spin.urls[spin.f];}
+(function(){let down=null;
+  spinEl.addEventListener('pointerdown',e=>{if(!spin)return;spin.auto=false;spinEl.classList.add('used','drag');down={x:e.clientX,f:spin.f};spinEl.setPointerCapture(e.pointerId);});
+  spinEl.addEventListener('pointermove',e=>{if(!down||!spin)return;const w=spinEl.clientWidth||400;show(down.f-(e.clientX-down.x)/(w*1.1)*spin.n);});
+  const up=()=>{down=null;spinEl.classList.remove('drag')};
+  spinEl.addEventListener('pointerup',up);spinEl.addEventListener('pointercancel',up);
+  spinEl.tabIndex=0;spinEl.addEventListener('keydown',e=>{if(!spin)return;if(e.key==='ArrowLeft'){spin.auto=false;show(spin.f+1)}if(e.key==='ArrowRight'){spin.auto=false;show(spin.f-1)}});
+})();
+// Purchase panel
+const buy=document.getElementById('buy'),f=document.getElementById('bForm'),done=document.getElementById('bDone'),bBuy=document.getElementById('bBuy');
+let last=null;
+works.forEach(w=>w.querySelector('button').addEventListener('click',()=>{
+  last=w.querySelector('button');
+  const im=w.querySelector('img'),bI=document.getElementById('bImg'),bV=document.getElementById('bVid');
+  if(w.dataset.video){bI.hidden=true;bV.hidden=false;bV.dataset.src=w.dataset.video;loadVideo(bV).then(()=>bV.play()).catch(()=>{});}
+  else{bV.hidden=true;bV.pause();bV.removeAttribute('src');bI.hidden=false;bI.src=im.src;bI.alt=im.alt;}
+  stopSpin();if(w.dataset.spin){bI.hidden=true;startSpin(w.dataset.spin,+w.dataset.frames,im.alt);}
+  document.getElementById('bTitle').textContent=w.dataset.t;
+  document.getElementById('bCat').textContent=w.dataset.catlabel;
+  document.getElementById('bTech').textContent=w.dataset.tech;
+  f.hidden=true;done.hidden=true;bBuy.hidden=false;f.reset();
+  buy.hidden=false;buy.scrollTop=0;document.body.style.overflow='hidden';
+  document.getElementById('bClose').focus();
+}));
+function closeBuy(){buy.hidden=true;stopSpin();document.getElementById('bVid').pause();document.body.style.overflow='';if(last)last.focus();}
+document.getElementById('bClose').addEventListener('click',closeBuy);
+addEventListener('keydown',e=>{if(e.key==='Escape'&&!buy.hidden)closeBuy()});
+bBuy.addEventListener('click',()=>{bBuy.hidden=true;f.hidden=false;document.getElementById('bName').focus();});
+f.addEventListener('submit',e=>{e.preventDefault();f.hidden=true;done.hidden=false;});
+const rf=document.getElementById('rForm');
+rf.addEventListener('submit',e=>{e.preventDefault();rf.hidden=true;document.getElementById('rDone').hidden=false;});
+</script>
+
+</body>
+</html>
