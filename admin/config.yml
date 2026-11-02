@@ -47,6 +47,7 @@ collections:
             add_to_top: true
             fields:
               - { name: title, label: Titel, widget: string }
+              - { name: title_en, label: Titel (Engels), widget: string, required: false, hint: "Laat leeg om de Nederlandse titel ook op de Engelse site te tonen." }
               - name: category
                 label: Categorie
                 widget: select
@@ -63,13 +64,15 @@ collections:
                 required: false
                 hint: "Alleen voor video's: een .mp4-bestand, het liefst korter dan 20 seconden."
               - { name: technique, label: Techniek, widget: string, required: false, hint: "Bijvoorbeeld: Olieverf op doek, 60 × 80 cm" }
-              - { name: price, label: Prijs, widget: string, default: "Op aanvraag", required: false, hint: "Bijvoorbeeld € 850, of Op aanvraag" }
+              - { name: technique_en, label: Techniek (Engels), widget: string, required: false, hint: "Bijvoorbeeld: Oil on canvas, 60 × 80 cm" }
+              - { name: price, label: Prijs, widget: string, default: "Op aanvraag", required: false, hint: "Bijvoorbeeld € 850, of Op aanvraag (wordt op de Engelse site automatisch On request)" }
               - name: status
                 label: Status
                 widget: select
                 options: [Beschikbaar, Verkocht]
                 default: Beschikbaar
               - { name: alt, label: Beschrijving voor schermlezers, widget: string, required: false, hint: "Eén zin over wat er te zien is. Helpt blinde bezoekers en Google." }
+              - { name: alt_en, label: Beschrijving (Engels), widget: string, required: false }
               - { name: spin, label: "360°-map (niet aanpassen)", widget: string, required: false }
               - { name: frames, label: "360°-aantal beelden (niet aanpassen)", widget: number, required: false, value_type: int }
       - name: instellingen
@@ -78,5 +81,6 @@ collections:
         format: json
         fields:
           - { name: motto, label: Motto, widget: string }
+          - { name: motto_en, label: Motto (Engels), widget: string, required: false }
           - { name: email, label: E-mailadres, widget: string, required: false }
           - { name: instagram, label: Instagram, widget: string, required: false, hint: "Bijvoorbeeld @studiovandijk" }

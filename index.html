@@ -110,6 +110,11 @@ textarea{min-height:4.5rem;resize:vertical}
 .done{margin:0;border-top:1px solid var(--rule);padding-top:1.4rem}
 
 .menu{display:contents}
+.brandrow{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem}
+.topbtns{display:flex;gap:.5rem;align-items:center}
+.langbtn{background:none;border:1px solid var(--rule);color:var(--quiet);font:500 .72rem var(--sans);letter-spacing:.06em;padding:.4rem .55rem;cursor:pointer;margin-top:.35rem;-webkit-tap-highlight-color:transparent}
+.langbtn:hover{color:var(--text);border-color:var(--quiet)}
+@media (max-width:820px){.langbtn{margin-top:0;padding:.55rem .7rem;font-size:.8rem}}
 .menubtn{display:none}
 @media (max-width:820px){
   .site{grid-template-columns:1fr;gap:0}
@@ -140,85 +145,95 @@ textarea{min-height:4.5rem;resize:vertical}
 
 <div class="intro" id="intro" aria-hidden="true">
   <video id="introVid" data-src="introE.mp4" poster="introE.jpg" muted playsinline autoplay preload="auto"></video>
-  <button type="button" class="skip" id="skip">Overslaan</button>
+  <button type="button" class="skip" id="skip" data-i18n="skip">Overslaan</button>
 </div>
 <div class="bgtex" aria-hidden="true"></div>
 <div class="site">
   <aside>
     <div class="brandrow"><div class="brand"><a class="name" href="#alles">Merel van Dijk.</a><span class="studio">Studio van Dijk</span></div>
-    <button type="button" class="menubtn" id="menuBtn" aria-expanded="false" aria-controls="menu">Menu</button></div>
+    <div class="topbtns"><button type="button" class="langbtn" id="langBtn" lang="en" aria-label="English">EN</button><button type="button" class="menubtn" id="menuBtn" aria-expanded="false" aria-controls="menu">Menu</button></div></div>
     <div class="menu" id="menu">
     <ul class="cats">
-      <li><a href="#schilderkunst" data-cat="schilderkunst">Schilderkunst</a></li>
-      <li><a href="#fotografie" data-cat="fotografie">Fotografie</a></li>
-      <li><a href="#video" data-cat="video">Video</a></li>
-      <li><a href="#keramiek" data-cat="keramiek">Keramiek</a></li>
-      <li><a href="#tekeningen" data-cat="tekeningen">Tekeningen</a></li>
-      <li><a href="#textiel" data-cat="textiel">Textiel</a></li>
+      <li><a href="#schilderkunst" data-cat="schilderkunst" data-i18n="cat_schilderkunst">Schilderkunst</a></li>
+      <li><a href="#fotografie" data-cat="fotografie" data-i18n="cat_fotografie">Fotografie</a></li>
+      <li><a href="#video" data-cat="video" data-i18n="cat_video">Video</a></li>
+      <li><a href="#keramiek" data-cat="keramiek" data-i18n="cat_keramiek">Keramiek</a></li>
+      <li><a href="#tekeningen" data-cat="tekeningen" data-i18n="cat_tekeningen">Tekeningen</a></li>
+      <li><a href="#textiel" data-cat="textiel" data-i18n="cat_textiel">Textiel</a></li>
     </ul>
-    <div class="links"><a href="#over">Over</a><a href="#aanvragen">Aanvragen</a><a href="#contact" id="mailLink">Email</a><a href="#contact" id="igLink">Instagram</a></div>
+    <div class="links"><a href="#over" data-i18n="nav_about">Over</a><a href="#aanvragen" data-i18n="nav_req">Aanvragen</a><a href="#contact" id="mailLink">Email</a><a href="#contact" id="igLink">Instagram</a></div>
     <p class="motto">Droom in de branding.</p>
     </div>
   </aside>
 
   <main id="wall">
-    <p class="loading" id="loading">Werken laden…</p>
+    <p class="loading" id="loading" data-i18n="loading">Werken laden…</p>
     <section class="about" id="over">
-      <h2>Over Merel</h2>
-      <p>Merel van Dijk is een ervaren kunstenaar in schilderkunst en keramiek. Fotografie is haar manier van kijken: ze gaat dicht op rots, water en zand staan, tot er alleen structuur overblijft.</p>
-      <p class="q">Werk kopen of een opdracht bespreken? Klik op een werk om het aan te vragen.</p>
-      <p class="q" id="contact">Email en Instagram volgen. Dit is een testversie.</p>
+      <h2 data-i18n="about_h">Over Merel</h2>
+      <p data-i18n="about_p">Merel van Dijk is een ervaren kunstenaar in schilderkunst en keramiek. Fotografie is haar manier van kijken: ze gaat dicht op rots, water en zand staan, tot er alleen structuur overblijft.</p>
+      <p class="q" data-i18n="about_q">Werk kopen of een opdracht bespreken? Klik op een werk om het aan te vragen.</p>
+      <p class="q" id="contact" data-i18n="contact_tbd">Email en Instagram volgen. Dit is een testversie.</p>
     </section>
     <section class="about req" id="aanvragen">
-      <h2>Aanvragen</h2>
-      <p>Een werk in opdracht, voor je huis, je bedrijf of als cadeau. Vertel wat je voor ogen hebt, dan neemt Merel contact op om de ideeën, het formaat en de prijs te bespreken.</p>
+      <h2 data-i18n="req_h">Aanvragen</h2>
+      <p data-i18n="req_p">Een werk in opdracht, voor je huis, je bedrijf of als cadeau. Vertel wat je voor ogen hebt, dan neemt Merel contact op om de ideeën, het formaat en de prijs te bespreken.</p>
       <form id="rForm">
-        <label for="rType">Soort werk
+        <label for="rType"><span data-i18n="req_type">Soort werk</span>
           <select id="rType" required>
-            <option value="">Kies een soort werk</option>
-            <option>Schilderij</option>
-            <option>Keramiek</option>
-            <option>Fotografie</option>
-            <option>Iets anders</option>
+            <option value="" data-i18n="req_choose">Kies een soort werk</option>
+            <option data-i18n="opt_painting">Schilderij</option>
+            <option data-i18n="opt_ceramics">Keramiek</option>
+            <option data-i18n="opt_photo">Fotografie</option>
+            <option data-i18n="opt_other">Iets anders</option>
           </select>
         </label>
-        <label for="rSize">Formaat of afmetingen<input id="rSize" placeholder="Bijvoorbeeld 80 × 100 cm"></label>
-        <label for="rBudget">Budget (optioneel)<input id="rBudget" placeholder="Bijvoorbeeld € 500 – 1.000"></label>
-        <label for="rIdea">Je idee<textarea id="rIdea" required placeholder="Onderwerp, kleuren, waar het komt te hangen of staan"></textarea></label>
-        <label for="rName">Naam<input id="rName" required autocomplete="name"></label>
-        <label for="rMail">E-mail<input id="rMail" type="email" required autocomplete="email"></label>
-        <button class="btn" type="submit">Aanvraag versturen</button>
+        <label for="rSize"><span data-i18n="req_size">Formaat of afmetingen</span><input id="rSize" data-i18n-ph="ph_size" placeholder="Bijvoorbeeld 80 × 100 cm"></label>
+        <label for="rBudget"><span data-i18n="req_budget">Budget (optioneel)</span><input id="rBudget" data-i18n-ph="ph_budget" placeholder="Bijvoorbeeld € 500 – 1.000"></label>
+        <label for="rIdea"><span data-i18n="req_idea">Je idee</span><textarea id="rIdea" required data-i18n-ph="ph_idea" placeholder="Onderwerp, kleuren, waar het komt te hangen of staan"></textarea></label>
+        <label for="rName"><span data-i18n="f_name">Naam</span><input id="rName" required autocomplete="name"></label>
+        <label for="rMail"><span data-i18n="f_mail">E-mail</span><input id="rMail" type="email" required autocomplete="email"></label>
+        <button class="btn" type="submit" data-i18n="send">Aanvraag versturen</button>
       </form>
-      <p class="done" id="rDone" hidden>Bedankt voor je aanvraag. Dit is een testversie, dus de aanvraag is nog niet verstuurd.</p>
+      <p class="done" id="rDone" data-i18n="req_done" hidden>Bedankt voor je aanvraag. Dit is een testversie, dus de aanvraag is nog niet verstuurd.</p>
     </section>
   </main>
 </div>
 
 <div class="buy" id="buy" hidden role="dialog" aria-modal="true" aria-labelledby="bTitle">
   <div class="buy-in">
-    <div class="buy-img"><img id="bImg" alt=""><div class="spin" id="bSpin" hidden><img id="bSpinImg" alt="" draggable="false"><span class="spinhint">Sleep om te draaien</span></div><video id="bVid" hidden controls loop muted playsinline></video></div>
+    <div class="buy-img"><img id="bImg" alt=""><div class="spin" id="bSpin" hidden><img id="bSpinImg" alt="" draggable="false"><span class="spinhint" data-i18n="spin_hint">Sleep om te draaien</span></div><video id="bVid" hidden controls loop muted playsinline></video></div>
     <div class="buy-info">
-      <button class="close" type="button" id="bClose">Sluiten ✕</button>
+      <button class="close" type="button" id="bClose" data-i18n="close_x">Sluiten ✕</button>
       <h2 id="bTitle"></h2>
       <dl class="spec">
-        <dt>Categorie</dt><dd id="bCat"></dd>
-        <dt>Techniek</dt><dd id="bTech"></dd>
-        <dt>Prijs</dt><dd id="bPrice">Op aanvraag</dd>
+        <dt data-i18n="d_cat">Categorie</dt><dd id="bCat"></dd>
+        <dt data-i18n="d_tech">Techniek</dt><dd id="bTech"></dd>
+        <dt data-i18n="d_price">Prijs</dt><dd id="bPrice">Op aanvraag</dd>
       </dl>
-      <button class="btn" type="button" id="bBuy">Dit werk kopen</button>
+      <button class="btn" type="button" id="bBuy" data-i18n="buy">Dit werk kopen</button>
       <form id="bForm" hidden>
-        <label for="bName">Naam<input id="bName" required autocomplete="name"></label>
-        <label for="bMail">E-mail<input id="bMail" type="email" required autocomplete="email"></label>
-        <label for="bMsg">Bericht (optioneel)<textarea id="bMsg"></textarea></label>
-        <button class="btn" type="submit">Aanvraag versturen</button>
-        <p class="note">Merel neemt contact op over prijs, levering en betaling.</p>
+        <label for="bName"><span data-i18n="f_name">Naam</span><input id="bName" required autocomplete="name"></label>
+        <label for="bMail"><span data-i18n="f_mail">E-mail</span><input id="bMail" type="email" required autocomplete="email"></label>
+        <label for="bMsg"><span data-i18n="f_msg">Bericht (optioneel)</span><textarea id="bMsg"></textarea></label>
+        <button class="btn" type="submit" data-i18n="send">Aanvraag versturen</button>
+        <p class="note" data-i18n="buy_note">Merel neemt contact op over prijs, levering en betaling.</p>
       </form>
-      <p class="done" id="bDone" hidden>Bedankt. Dit is een testversie, dus de aanvraag is nog niet verstuurd.</p>
+      <p class="done" id="bDone" data-i18n="buy_done" hidden>Bedankt. Dit is een testversie, dus de aanvraag is nog niet verstuurd.</p>
     </div>
   </div>
 </div>
 
 <script>
+// Language: Dutch or English, remembered per visitor
+const I18N={"skip": ["Overslaan", "Skip"], "play": ["▶ Afspelen", "▶ Play"], "cantplay": ["Video kan niet afspelen · verder", "Video can't play · continue"], "menu": ["Menu", "Menu"], "close": ["Sluiten", "Close"], "cat_schilderkunst": ["Schilderkunst", "Painting"], "cat_fotografie": ["Fotografie", "Photography"], "cat_video": ["Video", "Video"], "cat_keramiek": ["Keramiek", "Ceramics"], "cat_tekeningen": ["Tekeningen", "Drawings"], "cat_textiel": ["Textiel", "Textiles"], "nav_about": ["Over", "About"], "nav_req": ["Aanvragen", "Commissions"], "loading": ["Werken laden…", "Loading works…"], "load_err": ["De werken konden niet worden geladen. Ververs de pagina.", "The works could not be loaded. Please refresh the page."], "about_h": ["Over Merel", "About Merel"], "about_p": ["Merel van Dijk is een ervaren kunstenaar in schilderkunst en keramiek. Fotografie is haar manier van kijken: ze gaat dicht op rots, water en zand staan, tot er alleen structuur overblijft.", "Merel van Dijk is an experienced artist working in painting and ceramics. Photography is her way of looking: she gets close to rock, water and sand until only the structure remains."], "about_q": ["Werk kopen of een opdracht bespreken? Klik op een werk om het aan te vragen.", "Want to buy a work or discuss a commission? Click a work to enquire."], "contact_tbd": ["Email en Instagram volgen. Dit is een testversie.", "Email and Instagram coming soon. This is a test version."], "req_h": ["Aanvragen", "Commissions"], "req_p": ["Een werk in opdracht, voor je huis, je bedrijf of als cadeau. Vertel wat je voor ogen hebt, dan neemt Merel contact op om de ideeën, het formaat en de prijs te bespreken.", "A commissioned work for your home, your business or as a gift. Tell us what you have in mind and Merel will get in touch to discuss ideas, size and price."], "req_type": ["Soort werk", "Type of work"], "req_choose": ["Kies een soort werk", "Choose a type of work"], "opt_painting": ["Schilderij", "Painting"], "opt_ceramics": ["Keramiek", "Ceramics"], "opt_photo": ["Fotografie", "Photography"], "opt_other": ["Iets anders", "Something else"], "req_size": ["Formaat of afmetingen", "Size or dimensions"], "ph_size": ["Bijvoorbeeld 80 × 100 cm", "For example 80 × 100 cm"], "req_budget": ["Budget (optioneel)", "Budget (optional)"], "ph_budget": ["Bijvoorbeeld € 500 – 1.000", "For example € 500 – 1,000"], "req_idea": ["Je idee", "Your idea"], "ph_idea": ["Onderwerp, kleuren, waar het komt te hangen of staan", "Subject, colours, where it will hang or stand"], "f_name": ["Naam", "Name"], "f_mail": ["E-mail", "Email"], "f_msg": ["Bericht (optioneel)", "Message (optional)"], "send": ["Aanvraag versturen", "Send enquiry"], "req_done": ["Bedankt voor je aanvraag. Dit is een testversie, dus de aanvraag is nog niet verstuurd.", "Thank you for your enquiry. This is a test version, so it hasn't been sent yet."], "spin_hint": ["Sleep om te draaien", "Drag to rotate"], "spin_alt": ["360°, sleep om te draaien", "360°, drag to rotate"], "close_x": ["Sluiten ✕", "Close ✕"], "d_cat": ["Categorie", "Category"], "d_tech": ["Techniek", "Technique"], "d_price": ["Prijs", "Price"], "on_request": ["Op aanvraag", "On request"], "sold": ["Verkocht", "Sold"], "buy": ["Dit werk kopen", "Buy this work"], "buy_note": ["Merel neemt contact op over prijs, levering en betaling.", "Merel will get in touch about price, delivery and payment."], "buy_done": ["Bedankt. Dit is een testversie, dus de aanvraag is nog niet verstuurd.", "Thank you. This is a test version, so your enquiry hasn't been sent yet."], "view_buy": ["bekijken en kopen", "view and buy"], "view": ["bekijken", "view"], "mail_lbl": ["E-mail", "Email"]};
+let LANG=(()=>{try{const s=localStorage.getItem('lang');if(s==='nl'||s==='en')return s}catch(e){}return /^nl/i.test(navigator.language||'nl')?'nl':'en'})();
+const tr=k=>(I18N[k]||[k,k])[LANG==='en'?1:0];
+function applyLang(){document.documentElement.lang=LANG;
+  document.querySelectorAll('[data-i18n]').forEach(el=>{el.textContent=tr(el.dataset.i18n)});
+  document.querySelectorAll('[data-i18n-ph]').forEach(el=>{el.placeholder=tr(el.dataset.i18nPh)});
+  const b=document.getElementById('langBtn');b.textContent=LANG==='en'?'NL':'EN';b.lang=LANG==='en'?'nl':'en';b.setAttribute('aria-label',LANG==='en'?'Nederlands':'English');
+  const mb=document.getElementById('menuBtn');mb.textContent=tr(document.getElementById('menu').classList.contains('open')?'close':'menu');}
+applyLang();
 // iOS Safari only plays video files it can range-request; load each file whole and play it from memory.
 const blobCache={};
 function loadVideo(v){const s=v.dataset.src;if(!s)return Promise.resolve(v);
@@ -245,8 +260,8 @@ function loadVideo(v){const s=v.dataset.src;if(!s)return Promise.resolve(v);
   function tryPlay(){v.muted=true;return v.play().then(()=>{started=true;clearTimeout(idle);setTimeout(end,9000);});}
   // Without a play within 6s (slow network, Low Power Mode) the site opens anyway; a tap starts the film.
   const idle=setTimeout(()=>{if(!started)showPlay()},2500);
-  function showPlay(){if(started||done)return;skip.textContent='▶ Afspelen';skip.classList.add('play');
-    skip.onclick=e=>{e.stopPropagation();tryPlay().then(()=>{skip.textContent='Overslaan';skip.classList.remove('play');skip.onclick=null}).catch(()=>{skip.textContent='Video kan niet afspelen · verder';skip.onclick=end})};}
+  function showPlay(){if(started||done)return;skip.textContent=tr('play');skip.classList.add('play');
+    skip.onclick=e=>{e.stopPropagation();tryPlay().then(()=>{skip.textContent=tr('skip');skip.classList.remove('play');skip.onclick=null}).catch(()=>{skip.textContent=tr('cantplay');skip.onclick=end})};}
   intro.addEventListener('touchend',()=>{if(!started)tryPlay().catch(()=>{})},{passive:true});
   loadVideo(v).then(()=>tryPlay()).catch(showPlay);
 })();
@@ -254,15 +269,18 @@ function loadVideo(v){const s=v.dataset.src;if(!s)return Promise.resolve(v);
 const CATS={'Schilderkunst':'schilderkunst','Fotografie':'fotografie','Video':'video','Keramiek':'keramiek','Tekeningen':'tekeningen','Textiel':'textiel'};
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const rel=s=>String(s||'').replace(/^\/+/,'');
+const L=(w,k)=>(LANG==='en'&&w[k+'_en'])||w[k]||'';
+const priceTxt=p=>(!p||p==='Op aanvraag')?tr('on_request'):p;
 function workHTML(w){
-  const cat=CATS[w.category]||'schilderkunst',sold=w.status==='Verkocht';
-  const right=esc(w.category)+(sold?' · Verkocht':'');
+  const cat=CATS[w.category]||'schilderkunst',sold=w.status==='Verkocht',catLbl=tr('cat_'+cat);
+  w={...w,title:L(w,'title'),technique:L(w,'technique'),alt:L(w,'alt'),category:catLbl,price:priceTxt(w.price)};
+  const right=esc(catLbl)+(sold?' · '+esc(tr('sold')):'');
   const data=`data-cat="${cat}" data-catlabel="${esc(w.category)}" data-tech="${esc(w.technique)}" data-t="${esc(w.title)}" data-price="${esc(w.price||'Op aanvraag')}" data-status="${esc(w.status||'Beschikbaar')}"`;
   let media;
   if(w.video){media=`<video data-src="${esc(rel(w.video))}" ${w.image?`poster="${esc(rel(w.image))}"`:''} muted loop playsinline autoplay preload="metadata" aria-label="${esc(w.alt||w.title)}"></video>`;}
   else{media=`<img src="${esc(rel(w.image))}" alt="${esc(w.alt||w.title)}" loading="lazy" decoding="async">`+(w.spin?'<span class="badge360">360°</span>':'');}
   const extra=(w.video?` data-video="${esc(rel(w.video))}"`:'')+(w.spin?` data-spin="${esc(rel(w.spin))}" data-frames="${+w.frames||36}"`:'');
-  return `<figure class="work" ${data}${extra}><button type="button" aria-label="${esc(w.title)} bekijken${sold?'':' en kopen'}">${media}</button><figcaption><span>${esc(w.title)}</span><span>${right}</span></figcaption></figure>`;
+  return `<figure class="work" ${data}${extra}><button type="button" aria-label="${esc(w.title)}, ${tr(sold?'view':'view_buy')}">${media}</button><figcaption><span>${esc(w.title)}</span><span>${right}</span></figcaption></figure>`;
 }
 let works=[];
 // Category filter via #hash
@@ -285,25 +303,36 @@ function initVideos(){const vids=[...document.querySelectorAll('.work video')];
   vids.forEach(v=>io.observe(v));}
 // Build the wall, then filter and start videos
 function markTall(img){const f=()=>{if(img.naturalHeight>img.naturalWidth)img.closest('.work').classList.add('tall')};img.complete?f():img.addEventListener('load',f,{once:true});}
-fetch('content/works.json',{cache:'no-cache'}).then(r=>r.json()).then(d=>{
-  const list=(d.works||[]).filter(w=>w&&w.title&&(w.image||w.video));
-  document.getElementById('loading').insertAdjacentHTML('beforebegin',list.map(workHTML).join('\n'));
-  document.getElementById('loading').remove();
+let WORKS=null,SITE={};
+function renderWorks(){
+  if(!WORKS)return;
+  document.querySelectorAll('.work').forEach(w=>w.remove());
+  const list=WORKS.filter(w=>w&&w.title&&(w.image||w.video));
+  document.getElementById('over').insertAdjacentHTML('beforebegin',list.map(workHTML).join('\n'));
+  const ld=document.getElementById('loading');if(ld)ld.remove();
   works=[...document.querySelectorAll('.work')];
   document.querySelectorAll('.work img').forEach(markTall);
   route();initVideos();
-}).catch(()=>{document.getElementById('loading').textContent='De werken konden niet worden geladen. Ververs de pagina.';});
-fetch('content/site.json',{cache:'no-cache'}).then(r=>r.json()).then(s=>{
-  if(s.motto)document.querySelector('.motto').textContent=s.motto;
+}
+fetch('content/works.json',{cache:'no-cache'}).then(r=>r.json()).then(d=>{WORKS=d.works||[];renderWorks();})
+  .catch(()=>{const ld=document.getElementById('loading');ld.removeAttribute('data-i18n');ld.textContent=tr('load_err');});
+function renderSite(){const s=SITE;
+  const m=(LANG==='en'&&s.motto_en)||s.motto;if(m)document.querySelector('.motto').textContent=m;
   const mail=document.getElementById('mailLink'),ig=document.getElementById('igLink'),c=document.getElementById('contact');
   const bits=[];
-  if(s.email){mail.href='mailto:'+s.email;bits.push('E-mail: '+s.email);}
+  if(s.email){mail.href='mailto:'+s.email;bits.push(tr('mail_lbl')+': '+s.email);}
   if(s.instagram){const h=s.instagram.replace(/^@/,'').replace(/^https?:\/\/(www\.)?instagram\.com\//,'').replace(/\/$/,'');ig.href='https://www.instagram.com/'+h+'/';ig.target='_blank';ig.rel='noopener';bits.push('Instagram: @'+h);}
-  if(bits.length)c.textContent=bits.join(' · ');
-}).catch(()=>{});
+  if(bits.length){c.removeAttribute('data-i18n');c.textContent=bits.join(' · ');}
+}
+fetch('content/site.json',{cache:'no-cache'}).then(r=>r.json()).then(s=>{SITE=s;renderSite();}).catch(()=>{});
+// Language button
+document.getElementById('langBtn').addEventListener('click',()=>{
+  LANG=LANG==='en'?'nl':'en';try{localStorage.setItem('lang',LANG)}catch(e){}
+  applyLang();renderSite();renderWorks();
+});
 // Mobile menu
 (function(){const b=document.getElementById('menuBtn'),m=document.getElementById('menu');
-  function set(o){m.classList.toggle('open',o);document.body.classList.toggle('menu-open',o);b.setAttribute('aria-expanded',o);b.textContent=o?'Sluiten':'Menu';}
+  function set(o){m.classList.toggle('open',o);document.body.classList.toggle('menu-open',o);b.setAttribute('aria-expanded',o);b.textContent=tr(o?'close':'menu');}
   b.addEventListener('click',()=>set(!m.classList.contains('open')));
   m.addEventListener('click',e=>{if(e.target.closest('a'))set(false)});
   addEventListener('keydown',e=>{if(e.key==='Escape')set(false)});
@@ -318,7 +347,7 @@ function startSpin(base,n,alt){
   const urls=[...Array(n)].map((_,i)=>`${base}/${String(i).padStart(2,'0')}.jpg`);
   urls.forEach(u=>{const im=new Image();im.src=u});
   spin={n,urls,f:0,raf:0,auto:!matchMedia('(prefers-reduced-motion: reduce)').matches,last:0};
-  spinImg.src=urls[0];spinImg.alt=alt+' (360°, sleep om te draaien)';spinEl.hidden=false;
+  spinImg.src=urls[0];spinImg.alt=alt+' ('+tr('spin_alt')+')';spinEl.hidden=false;
   const tick=ts=>{if(!spin)return;if(spin.auto&&ts-spin.last>110){spin.last=ts;show(spin.f+1)}spin.raf=requestAnimationFrame(tick)};
   spin.raf=requestAnimationFrame(tick);
 }
@@ -343,7 +372,7 @@ document.getElementById('wall').addEventListener('click',e=>{
   document.getElementById('bTitle').textContent=w.dataset.t;
   document.getElementById('bCat').textContent=w.dataset.catlabel;
   document.getElementById('bTech').textContent=w.dataset.tech;
-  document.getElementById('bPrice').textContent=w.dataset.status==='Verkocht'?'Verkocht':w.dataset.price;
+  document.getElementById('bPrice').textContent=w.dataset.status==='Verkocht'?tr('sold'):w.dataset.price;
   f.hidden=true;done.hidden=true;bBuy.hidden=w.dataset.status==='Verkocht';f.reset();
   buy.hidden=false;buy.scrollTop=0;document.body.style.overflow='hidden';
   document.getElementById('bClose').focus();
