@@ -1,0 +1,82 @@
+# Beheeromgeving voor Studio van Dijk (Sveltia CMS)
+# Inloggen kan alleen met een GitHub-account dat schrijfrechten heeft op deze repository.
+backend:
+  name: github
+  repo: SimonKlaassen/studio-van-dijk
+  branch: main
+  commit_messages:
+    update: "Werken bijgewerkt via beheer"
+    uploadMedia: "Bestand geüpload: {{path}}"
+    deleteMedia: "Bestand verwijderd: {{path}}"
+
+locale: nl
+
+# Geüploade foto's en video's komen hier terecht
+media_folder: img/uploads
+public_folder: img/uploads
+
+# Grote telefoonfoto's automatisch verkleinen bij uploaden
+media_libraries:
+  default:
+    config:
+      max_file_size: 30000000
+      transformations:
+        raster_image:
+          format: webp
+          quality: 85
+          width: 2000
+          height: 2000
+
+collections:
+  - name: inhoud
+    label: Website
+    editor:
+      preview: false
+    files:
+      - name: werken
+        label: Werken
+        file: content/works.json
+        format: json
+        fields:
+          - name: works
+            label: Werken
+            label_singular: Werk
+            widget: list
+            hint: "Sleep werken omhoog of omlaag om de volgorde op de site te veranderen. Het bovenste werk staat bovenaan."
+            summary: "{{fields.title}} · {{fields.category}} · {{fields.status}}"
+            add_to_top: true
+            fields:
+              - { name: title, label: Titel, widget: string }
+              - name: category
+                label: Categorie
+                widget: select
+                options: [Schilderkunst, Fotografie, Video, Keramiek, Tekeningen, Textiel]
+                default: Schilderkunst
+              - name: image
+                label: Foto
+                widget: image
+                required: false
+                hint: "Bijgesneden foto van het werk. Bij een video: een stilstaand beeld uit de video (optioneel)."
+              - name: video
+                label: Video
+                widget: file
+                required: false
+                hint: "Alleen voor video's: een .mp4-bestand, het liefst korter dan 20 seconden."
+              - { name: technique, label: Techniek, widget: string, required: false, hint: "Bijvoorbeeld: Olieverf op doek, 60 × 80 cm" }
+              - { name: price, label: Prijs, widget: string, default: "Op aanvraag", required: false, hint: "Bijvoorbeeld € 850, of Op aanvraag" }
+              - name: status
+                label: Status
+                widget: select
+                options: [Beschikbaar, Verkocht]
+                default: Beschikbaar
+              - { name: alt, label: Beschrijving voor schermlezers, widget: string, required: false, hint: "Eén zin over wat er te zien is. Helpt blinde bezoekers en Google." }
+              - { name: spin, label: "360°-map (niet aanpassen)", widget: string, required: false }
+              - { name: frames, label: "360°-aantal beelden (niet aanpassen)", widget: number, required: false, value_type: int }
+      - name: instellingen
+        label: Gegevens
+        file: content/site.json
+        format: json
+        fields:
+          - { name: motto, label: Motto, widget: string }
+          - { name: email, label: E-mailadres, widget: string, required: false }
+          - { name: instagram, label: Instagram, widget: string, required: false, hint: "Bijvoorbeeld @studiovandijk" }

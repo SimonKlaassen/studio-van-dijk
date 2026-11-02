@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="description" content="Merel van Dijk — schilderkunst, fotografie, keramiek. Studio van Dijk.">
+<meta name="description" content="Merel van Dijk. Schilderkunst, fotografie en keramiek. Studio van Dijk.">
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <title>Merel van Dijk</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -66,6 +66,7 @@ main{padding-block:clamp(3.5rem,6vw,5rem) 6rem;display:flex;flex-direction:colum
 .tall.w1,.tall.w5{width:min(100%,36rem)}
 .tall.w3{width:min(100%,30rem)}
 
+.loading{color:var(--quiet);margin:0}
 .about{max-width:38rem;align-self:flex-end;display:grid;gap:1rem;scroll-margin-top:3rem}
 .about h2{font-weight:500;font-size:1rem;text-transform:uppercase;letter-spacing:.02em;margin:0}
 .about p{margin:0;color:var(--text)}
@@ -155,52 +156,13 @@ textarea{min-height:4.5rem;resize:vertical}
       <li><a href="#tekeningen" data-cat="tekeningen">Tekeningen</a></li>
       <li><a href="#textiel" data-cat="textiel">Textiel</a></li>
     </ul>
-    <div class="links"><a href="#over">Over</a><a href="#aanvragen">Aanvragen</a><a href="#contact">Email</a><a href="#contact">Instagram</a></div>
+    <div class="links"><a href="#over">Over</a><a href="#aanvragen">Aanvragen</a><a href="#contact" id="mailLink">Email</a><a href="#contact" id="igLink">Instagram</a></div>
     <p class="motto">Droom in de branding.</p>
     </div>
   </aside>
 
   <main id="wall">
-
-    <figure class="work" data-cat="schilderkunst" data-catlabel="Schilderkunst" data-tech="Olieverf op doek" data-t="Stenen in stroming"><button type="button" aria-label="Stenen in stroming bekijken en kopen"><img src="img/q1732.jpg" alt="Schilderij: lichte stenen onder bewegend water in blauw, groen en oker" width="1800" height="1488" loading="lazy" decoding="async"></button><figcaption><span>Stenen in stroming</span><span>Schilderkunst</span></figcaption></figure>
-    <figure class="work" data-cat="fotografie" data-catlabel="Fotografie" data-tech="Fotografie, print op aanvraag" data-t="Mosselbank"><button type="button" aria-label="Mosselbank bekijken en kopen"><img src="img/02.jpg" alt="Close-up van mosselen met zeesla" width="1600" height="1067" loading="lazy" decoding="async"></button><figcaption><span>Mosselbank</span><span>Fotografie</span></figcaption></figure>
-    <figure class="work" data-cat="keramiek" data-catlabel="Keramiek" data-tech="Klei" data-t="Holle vorm"><button type="button" aria-label="Holle vorm bekijken en kopen"><img src="img/03.jpg" alt="Ongebakken kleisculptuur met grote holtes en een gedeukt oppervlak" width="1332" height="870" loading="lazy" decoding="async"></button><figcaption><span>Holle vorm</span><span>Keramiek</span></figcaption></figure>
-    <figure class="work tall" data-cat="fotografie" data-catlabel="Fotografie" data-tech="Fotografie, print op aanvraag" data-t="Maan boven de rotsen"><button type="button" aria-label="Maan boven de rotsen bekijken en kopen"><img src="img/04.jpg" alt="Donkere rotsen aan zee in de schemering, met een smalle maan" width="867" height="1300" loading="lazy" decoding="async"></button><figcaption><span>Maan boven de rotsen</span><span>Fotografie</span></figcaption></figure>
-    <figure class="work" data-cat="tekeningen" data-catlabel="Tekeningen" data-tech="Potlood op papier" data-t="Rots en zee"><button type="button" aria-label="Rots en zee bekijken en kopen"><img src="img/05.jpg" alt="Schetsboek met een potloodtekening van een rotswand en de zee" width="1033" height="875" loading="lazy" decoding="async"></button><figcaption><span>Rots en zee</span><span>Tekeningen</span></figcaption></figure>
-    <figure class="work" data-cat="schilderkunst" data-catlabel="Schilderkunst" data-tech="Olieverf op doek" data-t="Kust bij maanlicht"><button type="button" aria-label="Kust bij maanlicht bekijken en kopen"><img src="img/q1730.jpg" alt="Schilderij: een donkere kust met kliffen en schuimende golven onder een blauwe maanlichthemel" width="1800" height="1543" loading="lazy" decoding="async"></button><figcaption><span>Kust bij maanlicht</span><span>Schilderkunst</span></figcaption></figure>
-    <figure class="work" data-cat="fotografie" data-catlabel="Fotografie" data-tech="Fotografie, print op aanvraag" data-t="Zeepokken"><button type="button" aria-label="Zeepokken bekijken en kopen"><img src="img/06.jpg" alt="Rots bedekt met zeepokken, schaalhoorns en zeewier" width="1600" height="1067" loading="lazy" decoding="async"></button><figcaption><span>Zeepokken</span><span>Fotografie</span></figcaption></figure>
-    <figure class="work" data-cat="video" data-catlabel="Video" data-tech="Video" data-t="Mosselen en zand" data-video="vid/17686cd6-IMG_7273.mp4"><button type="button" aria-label="Mosselen en zand bekijken en kopen"><video data-src="vid/17686cd6-IMG_7273.mp4" poster="vid/17686cd6-IMG_7273.jpg" width="1024" height="576" muted loop playsinline autoplay preload="metadata" aria-label="Video: water beweegt over kalksteen met mosselen"></video></button><figcaption><span>Mosselen en zand</span><span>Video</span></figcaption></figure>
-    <figure class="work tall" data-cat="schilderkunst" data-catlabel="Schilderkunst" data-tech="Olieverf op doek" data-t="Poreuze vorm"><button type="button" aria-label="Poreuze vorm bekijken en kopen"><img src="img/q1734.jpg" alt="Schilderij: een lichtgeel poreus object tegen een donkere achtergrond" width="1571" height="1800" loading="lazy" decoding="async"></button><figcaption><span>Poreuze vorm</span><span>Schilderkunst</span></figcaption></figure>
-    <figure class="work" data-cat="fotografie" data-catlabel="Fotografie" data-tech="Fotografie, print op aanvraag" data-t="Branding"><button type="button" aria-label="Branding bekijken en kopen"><img src="img/09.jpg" alt="Kalksteen met mosselen aan de rand van de branding" width="1600" height="1067" loading="lazy" decoding="async"></button><figcaption><span>Branding</span><span>Fotografie</span></figcaption></figure>
-    <figure class="work tall" data-cat="tekeningen" data-catlabel="Tekeningen" data-tech="Potlood op papier" data-t="Krastekeningen"><button type="button" aria-label="Krastekeningen bekijken en kopen"><img src="img/10.jpg" alt="Vijf witte krastekeningen op zwart papier" width="402" height="810" loading="lazy" decoding="async"></button><figcaption><span>Krastekeningen</span><span>Tekeningen</span></figcaption></figure>
-    <figure class="work" data-cat="fotografie" data-catlabel="Fotografie" data-tech="Fotografie, print op aanvraag" data-t="Steen op het strand"><button type="button" aria-label="Steen op het strand bekijken en kopen"><img src="img/11.jpg" alt="Steen op het zand, bedekt met zeepokken en groen wier" width="1600" height="1013" loading="lazy" decoding="async"></button><figcaption><span>Steen op het strand</span><span>Fotografie</span></figcaption></figure>
-    <figure class="work tall" data-cat="schilderkunst" data-catlabel="Schilderkunst" data-tech="Olieverf op doek" data-t="Golf op de rots"><button type="button" aria-label="Golf op de rots bekijken en kopen"><img src="img/q1733.jpg" alt="Schilderij: een golf breekt wit schuimend over een groene rots bij een okergeel strand" width="1512" height="1800" loading="lazy" decoding="async"></button><figcaption><span>Golf op de rots</span><span>Schilderkunst</span></figcaption></figure>
-    <figure class="work" data-cat="schilderkunst" data-catlabel="Schilderkunst" data-tech="Olieverf op doek" data-t="Vliegers in het veld"><button type="button" aria-label="Vliegers in het veld bekijken en kopen"><img src="img/12.jpg" alt="Schilderij: twee bruine vliegers in een droog veld voor een bosrand" width="1600" height="1168" loading="lazy" decoding="async"></button><figcaption><span>Vliegers in het veld</span><span>Schilderkunst</span></figcaption></figure>
-    <figure class="work tall" data-cat="fotografie" data-catlabel="Fotografie" data-tech="Fotografie, print op aanvraag" data-t="Rotswand in mist"><button type="button" aria-label="Rotswand in mist bekijken en kopen"><img src="img/13.jpg" alt="Rotswand vol mosselen en wier naast de branding in de mist" width="867" height="1300" loading="lazy" decoding="async"></button><figcaption><span>Rotswand in mist</span><span>Fotografie</span></figcaption></figure>
-    <figure class="work" data-cat="video" data-catlabel="Video" data-tech="Video" data-t="Rots in de mist" data-video="vid/440c2fc6-IMG_7310.mp4"><button type="button" aria-label="Rots in de mist bekijken en kopen"><video data-src="vid/440c2fc6-IMG_7310.mp4" poster="vid/440c2fc6-IMG_7310.jpg" width="1024" height="576" muted loop playsinline autoplay preload="metadata" aria-label="Video: begroeide rots in helder water, met mist erachter"></video></button><figcaption><span>Rots in de mist</span><span>Video</span></figcaption></figure>
-    <figure class="work" data-cat="keramiek" data-catlabel="Keramiek" data-tech="Steengoed, gespikkeld glazuur" data-t="Testkopje (360°)" data-spin="spin/kopje" data-frames="36"><button type="button" aria-label="Testkopje bekijken in 360 graden"><img src="spin/kopje/00.jpg" alt="Gerenderd testkopje met blauwgrijs gespikkeld glazuur en een onverglaasde voet" width="460" height="400" loading="lazy" decoding="async"><span class="badge360">360°</span></button><figcaption><span>Testkopje (360°)</span><span>Keramiek</span></figcaption></figure>
-    <figure class="work tall" data-cat="keramiek" data-catlabel="Keramiek" data-tech="Klei" data-t="Paard"><button type="button" aria-label="Paard bekijken en kopen"><img src="img/15.jpg" alt="Keramiek: een gestileerd paard, wit en grijsblauw geglazuurd" width="338" height="364" loading="lazy" decoding="async"></button><figcaption><span>Paard</span><span>Keramiek</span></figcaption></figure>
-    <figure class="work" data-cat="fotografie" data-catlabel="Fotografie" data-tech="Fotografie, print op aanvraag" data-t="Kokerwormrif"><button type="button" aria-label="Kokerwormrif bekijken en kopen"><img src="img/16.jpg" alt="Honingraatstructuur van kokerwormen tussen mosselen en zeesla" width="1600" height="1067" loading="lazy" decoding="async"></button><figcaption><span>Kokerwormrif</span><span>Fotografie</span></figcaption></figure>
-    <figure class="work tall" data-cat="tekeningen" data-catlabel="Tekeningen" data-tech="Potlood op papier" data-t="Modelstudie I"><button type="button" aria-label="Modelstudie I bekijken en kopen"><img src="img/17.jpg" alt="Potloodstudies van een zittend en gebogen model" width="1165" height="1290" loading="lazy" decoding="async"></button><figcaption><span>Modelstudie I</span><span>Tekeningen</span></figcaption></figure>
-    <figure class="work" data-cat="fotografie" data-catlabel="Fotografie" data-tech="Fotografie, print op aanvraag" data-t="Baai met kelp"><button type="button" aria-label="Baai met kelp bekijken en kopen"><img src="img/18.jpg" alt="Kleine baai met kelp op het zand onder kalkstenen rotsen" width="1600" height="1067" loading="lazy" decoding="async"></button><figcaption><span>Baai met kelp</span><span>Fotografie</span></figcaption></figure>
-    <figure class="work tall" data-cat="textiel" data-catlabel="Textiel" data-tech="Vilt en wol" data-t="Vilt"><button type="button" aria-label="Vilt bekijken en kopen"><img src="img/19.jpg" alt="Werk van losse wol in zand, grijs, lichtgroen en donkerblauw" width="1065" height="1300" loading="lazy" decoding="async"></button><figcaption><span>Vilt</span><span>Textiel</span></figcaption></figure>
-    <figure class="work" data-cat="fotografie" data-catlabel="Fotografie" data-tech="Fotografie, print op aanvraag" data-t="Schuim"><button type="button" aria-label="Schuim bekijken en kopen"><img src="img/20.jpg" alt="Schuimende golven over zand en kalksteen met mosselen" width="1600" height="1067" loading="lazy" decoding="async"></button><figcaption><span>Schuim</span><span>Fotografie</span></figcaption></figure>
-    <figure class="work" data-cat="video" data-catlabel="Video" data-tech="Video" data-t="Wier in de stroming" data-video="vid/dad237b7-IMG_7288.mp4"><button type="button" aria-label="Wier in de stroming bekijken en kopen"><video data-src="vid/dad237b7-IMG_7288.mp4" poster="vid/dad237b7-IMG_7288.jpg" width="1024" height="576" muted loop playsinline autoplay preload="metadata" aria-label="Video: lang bruin wier beweegt in stromend water"></video></button><figcaption><span>Wier in de stroming</span><span>Video</span></figcaption></figure>
-    <figure class="work tall" data-cat="schilderkunst" data-catlabel="Schilderkunst" data-tech="Olieverf op doek" data-t="Palmen"><button type="button" aria-label="Palmen bekijken en kopen"><img src="img/q1735.jpg" alt="Schilderij: twee palmen in groen boven een okergele band" width="1436" height="1800" loading="lazy" decoding="async"></button><figcaption><span>Palmen</span><span>Schilderkunst</span></figcaption></figure>
-    <figure class="work" data-cat="fotografie" data-catlabel="Fotografie" data-tech="Fotografie, print op aanvraag" data-t="Uitgesleten kalksteen"><button type="button" aria-label="Uitgesleten kalksteen bekijken en kopen"><img src="img/23.jpg" alt="Gelaagde kalksteen met holtes en kleine mosselen" width="1600" height="1067" loading="lazy" decoding="async"></button><figcaption><span>Uitgesleten kalksteen</span><span>Fotografie</span></figcaption></figure>
-    <figure class="work" data-cat="tekeningen" data-catlabel="Tekeningen" data-tech="Potlood op papier" data-t="Strand"><button type="button" aria-label="Strand bekijken en kopen"><img src="img/24.jpg" alt="Schetsboek met potloodschetsen van een kust en golven" width="1105" height="955" loading="lazy" decoding="async"></button><figcaption><span>Strand</span><span>Tekeningen</span></figcaption></figure>
-    <figure class="work" data-cat="fotografie" data-catlabel="Fotografie" data-tech="Fotografie, print op aanvraag" data-t="Baai"><button type="button" aria-label="Baai bekijken en kopen"><img src="img/25.jpg" alt="Turquoise baai achter een rotsplateau vol mosselen" width="1600" height="1067" loading="lazy" decoding="async"></button><figcaption><span>Baai</span><span>Fotografie</span></figcaption></figure>
-    <figure class="work" data-cat="keramiek" data-catlabel="Keramiek" data-tech="Klei" data-t="Vier kommen"><button type="button" aria-label="Vier kommen bekijken en kopen"><img src="img/26.jpg" alt="Vier ongebakken kommen van klei, op een rij" width="1600" height="447" loading="lazy" decoding="async"></button><figcaption><span>Vier kommen</span><span>Keramiek</span></figcaption></figure>
-    <figure class="work" data-cat="fotografie" data-catlabel="Fotografie" data-tech="Fotografie, print op aanvraag" data-t="Over het rif"><button type="button" aria-label="Over het rif bekijken en kopen"><img src="img/27.jpg" alt="Zeewater stroomt over rotsen met wier en kokerwormen" width="1600" height="1067" loading="lazy" decoding="async"></button><figcaption><span>Over het rif</span><span>Fotografie</span></figcaption></figure>
-    <figure class="work" data-cat="video" data-catlabel="Video" data-tech="Video" data-t="Laagwater" data-video="vid/ffdb5078-IMG_7312.mp4"><button type="button" aria-label="Laagwater bekijken en kopen"><video data-src="vid/ffdb5078-IMG_7312.mp4" poster="vid/ffdb5078-IMG_7312.jpg" width="1024" height="576" muted loop playsinline autoplay preload="metadata" aria-label="Video: wier en zand onder bewegend water"></video></button><figcaption><span>Laagwater</span><span>Video</span></figcaption></figure>
-    <figure class="work" data-cat="schilderkunst" data-catlabel="Schilderkunst" data-tech="Olieverf op doek" data-t="Blauw"><button type="button" aria-label="Blauw bekijken en kopen"><img src="img/29.jpg" alt="Groot schilderij in diep blauw en wit op gekreukt papier" width="1034" height="637" loading="lazy" decoding="async"></button><figcaption><span>Blauw</span><span>Schilderkunst</span></figcaption></figure>
-    <figure class="work" data-cat="fotografie" data-catlabel="Fotografie" data-tech="Fotografie, print op aanvraag" data-t="Wier bij laagwater"><button type="button" aria-label="Wier bij laagwater bekijken en kopen"><img src="img/30.jpg" alt="Bruin wier en schuim op een rotsplateau bij laagwater" width="1600" height="1067" loading="lazy" decoding="async"></button><figcaption><span>Wier bij laagwater</span><span>Fotografie</span></figcaption></figure>
-    <figure class="work" data-cat="tekeningen" data-catlabel="Tekeningen" data-tech="Potlood op papier" data-t="Portretten"><button type="button" aria-label="Portretten bekijken en kopen"><img src="img/31.jpg" alt="Schetsboek met twee potloodportretten" width="1066" height="777" loading="lazy" decoding="async"></button><figcaption><span>Portretten</span><span>Tekeningen</span></figcaption></figure>
-    <figure class="work" data-cat="fotografie" data-catlabel="Fotografie" data-tech="Fotografie, print op aanvraag" data-t="Kelp in de branding"><button type="button" aria-label="Kelp in de branding bekijken en kopen"><img src="img/32.jpg" alt="Kelp drijft in kolkend water voor een rotswand" width="1600" height="1067" loading="lazy" decoding="async"></button><figcaption><span>Kelp in de branding</span><span>Fotografie</span></figcaption></figure>
-    <figure class="work tall" data-cat="tekeningen" data-catlabel="Tekeningen" data-tech="Potlood op papier" data-t="Modelstudie II"><button type="button" aria-label="Modelstudie II bekijken en kopen"><img src="img/33.jpg" alt="Potloodstudies van staande en gebogen figuren" width="871" height="1300" loading="lazy" decoding="async"></button><figcaption><span>Modelstudie II</span><span>Tekeningen</span></figcaption></figure>
-    <figure class="work" data-cat="fotografie" data-catlabel="Fotografie" data-tech="Fotografie, print op aanvraag" data-t="Mosselrots"><button type="button" aria-label="Mosselrots bekijken en kopen"><img src="img/34.jpg" alt="Uitgesleten rots met clusters mosselen" width="1600" height="1067" loading="lazy" decoding="async"></button><figcaption><span>Mosselrots</span><span>Fotografie</span></figcaption></figure>
-    <figure class="work tall" data-cat="tekeningen" data-catlabel="Tekeningen" data-tech="Potlood op papier" data-t="Tuin"><button type="button" aria-label="Tuin bekijken en kopen"><img src="img/35.jpg" alt="Schetsboek met potloodschetsen van planten en een hek" width="758" height="829" loading="lazy" decoding="async"></button><figcaption><span>Tuin</span><span>Tekeningen</span></figcaption></figure>
-    <figure class="work" data-cat="fotografie" data-catlabel="Fotografie" data-tech="Fotografie, print op aanvraag" data-t="Getijdenpoel"><button type="button" aria-label="Getijdenpoel bekijken en kopen"><img src="img/36.jpg" alt="Rotsplateau met mosselen en een getijdenpoel aan helder water" width="1600" height="1200" loading="lazy" decoding="async"></button><figcaption><span>Getijdenpoel</span><span>Fotografie</span></figcaption></figure>
+    <p class="loading" id="loading">Werken laden…</p>
     <section class="about" id="over">
       <h2>Over Merel</h2>
       <p>Merel van Dijk is een ervaren kunstenaar in schilderkunst en keramiek. Fotografie is haar manier van kijken: ze gaat dicht op rots, water en zand staan, tot er alleen structuur overblijft.</p>
@@ -241,7 +203,7 @@ textarea{min-height:4.5rem;resize:vertical}
       <dl class="spec">
         <dt>Categorie</dt><dd id="bCat"></dd>
         <dt>Techniek</dt><dd id="bTech"></dd>
-        <dt>Prijs</dt><dd>Op aanvraag</dd>
+        <dt>Prijs</dt><dd id="bPrice">Op aanvraag</dd>
       </dl>
       <button class="btn" type="button" id="bBuy">Dit werk kopen</button>
       <form id="bForm" hidden>
@@ -288,8 +250,22 @@ function loadVideo(v){const s=v.dataset.src;if(!s)return Promise.resolve(v);
   intro.addEventListener('touchend',()=>{if(!started)tryPlay().catch(()=>{})},{passive:true});
   loadVideo(v).then(()=>tryPlay()).catch(showPlay);
 })();
+// Works come from content/works.json, which the /admin page edits
+const CATS={'Schilderkunst':'schilderkunst','Fotografie':'fotografie','Video':'video','Keramiek':'keramiek','Tekeningen':'tekeningen','Textiel':'textiel'};
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const rel=s=>String(s||'').replace(/^\/+/,'');
+function workHTML(w){
+  const cat=CATS[w.category]||'schilderkunst',sold=w.status==='Verkocht';
+  const right=esc(w.category)+(sold?' · Verkocht':'');
+  const data=`data-cat="${cat}" data-catlabel="${esc(w.category)}" data-tech="${esc(w.technique)}" data-t="${esc(w.title)}" data-price="${esc(w.price||'Op aanvraag')}" data-status="${esc(w.status||'Beschikbaar')}"`;
+  let media;
+  if(w.video){media=`<video data-src="${esc(rel(w.video))}" ${w.image?`poster="${esc(rel(w.image))}"`:''} muted loop playsinline autoplay preload="metadata" aria-label="${esc(w.alt||w.title)}"></video>`;}
+  else{media=`<img src="${esc(rel(w.image))}" alt="${esc(w.alt||w.title)}" loading="lazy" decoding="async">`+(w.spin?'<span class="badge360">360°</span>':'');}
+  const extra=(w.video?` data-video="${esc(rel(w.video))}"`:'')+(w.spin?` data-spin="${esc(rel(w.spin))}" data-frames="${+w.frames||36}"`:'');
+  return `<figure class="work" ${data}${extra}><button type="button" aria-label="${esc(w.title)} bekijken${sold?'':' en kopen'}">${media}</button><figcaption><span>${esc(w.title)}</span><span>${right}</span></figcaption></figure>`;
+}
+let works=[];
 // Category filter via #hash
-const works=[...document.querySelectorAll('.work')];
 const about=document.getElementById('over');
 function route(){
   const h=location.hash.slice(1);
@@ -300,13 +276,31 @@ function route(){
   document.querySelectorAll('.cats a').forEach(a=>a.setAttribute('aria-current',a.dataset.cat===cat?'true':'false'));
   if(cat||h==='alles'||!h) scrollTo(0,0);
 }
-addEventListener('hashchange',route);route();
+addEventListener('hashchange',route);
 // Work videos: load when they come near the screen, play while visible
-(function(){const vids=[...document.querySelectorAll('.work video')];
+function initVideos(){const vids=[...document.querySelectorAll('.work video')];
   if(matchMedia('(prefers-reduced-motion: reduce)').matches){vids.forEach(v=>{v.removeAttribute('autoplay');v.controls=true;loadVideo(v)});return;}
   const io=new IntersectionObserver(es=>es.forEach(e=>{const v=e.target;
     if(e.isIntersecting)loadVideo(v).then(()=>v.play()).catch(()=>{});else v.pause();}),{rootMargin:'300px 0px'});
-  vids.forEach(v=>io.observe(v));})();
+  vids.forEach(v=>io.observe(v));}
+// Build the wall, then filter and start videos
+function markTall(img){const f=()=>{if(img.naturalHeight>img.naturalWidth)img.closest('.work').classList.add('tall')};img.complete?f():img.addEventListener('load',f,{once:true});}
+fetch('content/works.json',{cache:'no-cache'}).then(r=>r.json()).then(d=>{
+  const list=(d.works||[]).filter(w=>w&&w.title&&(w.image||w.video));
+  document.getElementById('loading').insertAdjacentHTML('beforebegin',list.map(workHTML).join('\n'));
+  document.getElementById('loading').remove();
+  works=[...document.querySelectorAll('.work')];
+  document.querySelectorAll('.work img').forEach(markTall);
+  route();initVideos();
+}).catch(()=>{document.getElementById('loading').textContent='De werken konden niet worden geladen. Ververs de pagina.';});
+fetch('content/site.json',{cache:'no-cache'}).then(r=>r.json()).then(s=>{
+  if(s.motto)document.querySelector('.motto').textContent=s.motto;
+  const mail=document.getElementById('mailLink'),ig=document.getElementById('igLink'),c=document.getElementById('contact');
+  const bits=[];
+  if(s.email){mail.href='mailto:'+s.email;bits.push('E-mail: '+s.email);}
+  if(s.instagram){const h=s.instagram.replace(/^@/,'').replace(/^https?:\/\/(www\.)?instagram\.com\//,'').replace(/\/$/,'');ig.href='https://www.instagram.com/'+h+'/';ig.target='_blank';ig.rel='noopener';bits.push('Instagram: @'+h);}
+  if(bits.length)c.textContent=bits.join(' · ');
+}).catch(()=>{});
 // Mobile menu
 (function(){const b=document.getElementById('menuBtn'),m=document.getElementById('menu');
   function set(o){m.classList.toggle('open',o);document.body.classList.toggle('menu-open',o);b.setAttribute('aria-expanded',o);b.textContent=o?'Sluiten':'Menu';}
@@ -339,8 +333,9 @@ function show(f){if(!spin)return;spin.f=((Math.round(f)%spin.n)+spin.n)%spin.n;s
 // Purchase panel
 const buy=document.getElementById('buy'),f=document.getElementById('bForm'),done=document.getElementById('bDone'),bBuy=document.getElementById('bBuy');
 let last=null;
-works.forEach(w=>w.querySelector('button').addEventListener('click',()=>{
-  last=w.querySelector('button');
+document.getElementById('wall').addEventListener('click',e=>{
+  const btnEl=e.target.closest('.work > button');if(!btnEl)return;const w=btnEl.parentElement;
+  last=btnEl;
   const im=w.querySelector('img'),bI=document.getElementById('bImg'),bV=document.getElementById('bVid');
   if(w.dataset.video){bI.hidden=true;bV.hidden=false;bV.dataset.src=w.dataset.video;loadVideo(bV).then(()=>bV.play()).catch(()=>{});}
   else{bV.hidden=true;bV.pause();bV.removeAttribute('src');bI.hidden=false;bI.src=im.src;bI.alt=im.alt;}
@@ -348,10 +343,11 @@ works.forEach(w=>w.querySelector('button').addEventListener('click',()=>{
   document.getElementById('bTitle').textContent=w.dataset.t;
   document.getElementById('bCat').textContent=w.dataset.catlabel;
   document.getElementById('bTech').textContent=w.dataset.tech;
-  f.hidden=true;done.hidden=true;bBuy.hidden=false;f.reset();
+  document.getElementById('bPrice').textContent=w.dataset.status==='Verkocht'?'Verkocht':w.dataset.price;
+  f.hidden=true;done.hidden=true;bBuy.hidden=w.dataset.status==='Verkocht';f.reset();
   buy.hidden=false;buy.scrollTop=0;document.body.style.overflow='hidden';
   document.getElementById('bClose').focus();
-}));
+});
 function closeBuy(){buy.hidden=true;stopSpin();document.getElementById('bVid').pause();document.body.style.overflow='';if(last)last.focus();}
 document.getElementById('bClose').addEventListener('click',closeBuy);
 addEventListener('keydown',e=>{if(e.key==='Escape'&&!buy.hidden)closeBuy()});

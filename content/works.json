@@ -1,0 +1,361 @@
+{
+  "works": [
+    {
+      "title": "Stenen in stroming",
+      "category": "Schilderkunst",
+      "technique": "Olieverf op doek",
+      "price": "Op aanvraag",
+      "status": "Beschikbaar",
+      "image": "img/q1732.jpg",
+      "alt": "Schilderij: lichte stenen onder bewegend water in blauw, groen en oker"
+    },
+    {
+      "title": "Mosselbank",
+      "category": "Fotografie",
+      "technique": "Fotografie, print op aanvraag",
+      "price": "Op aanvraag",
+      "status": "Beschikbaar",
+      "image": "img/02.jpg",
+      "alt": "Close-up van mosselen met zeesla"
+    },
+    {
+      "title": "Holle vorm",
+      "category": "Keramiek",
+      "technique": "Klei",
+      "price": "Op aanvraag",
+      "status": "Beschikbaar",
+      "image": "img/03.jpg",
+      "alt": "Ongebakken kleisculptuur met grote holtes en een gedeukt oppervlak"
+    },
+    {
+      "title": "Maan boven de rotsen",
+      "category": "Fotografie",
+      "technique": "Fotografie, print op aanvraag",
+      "price": "Op aanvraag",
+      "status": "Beschikbaar",
+      "image": "img/04.jpg",
+      "alt": "Donkere rotsen aan zee in de schemering, met een smalle maan"
+    },
+    {
+      "title": "Rots en zee",
+      "category": "Tekeningen",
+      "technique": "Potlood op papier",
+      "price": "Op aanvraag",
+      "status": "Beschikbaar",
+      "image": "img/05.jpg",
+      "alt": "Schetsboek met een potloodtekening van een rotswand en de zee"
+    },
+    {
+      "title": "Kust bij maanlicht",
+      "category": "Schilderkunst",
+      "technique": "Olieverf op doek",
+      "price": "Op aanvraag",
+      "status": "Beschikbaar",
+      "image": "img/q1730.jpg",
+      "alt": "Schilderij: een donkere kust met kliffen en schuimende golven onder een blauwe maanlichthemel"
+    },
+    {
+      "title": "Zeepokken",
+      "category": "Fotografie",
+      "technique": "Fotografie, print op aanvraag",
+      "price": "Op aanvraag",
+      "status": "Beschikbaar",
+      "image": "img/06.jpg",
+      "alt": "Rots bedekt met zeepokken, schaalhoorns en zeewier"
+    },
+    {
+      "title": "Mosselen en zand",
+      "category": "Video",
+      "technique": "Video",
+      "price": "Op aanvraag",
+      "status": "Beschikbaar",
+      "video": "vid/17686cd6-IMG_7273.mp4",
+      "image": "vid/17686cd6-IMG_7273.jpg",
+      "alt": "Video: water beweegt over kalksteen met mosselen"
+    },
+    {
+      "title": "Poreuze vorm",
+      "category": "Schilderkunst",
+      "technique": "Olieverf op doek",
+      "price": "Op aanvraag",
+      "status": "Beschikbaar",
+      "image": "img/q1734.jpg",
+      "alt": "Schilderij: een lichtgeel poreus object tegen een donkere achtergrond"
+    },
+    {
+      "title": "Branding",
+      "category": "Fotografie",
+      "technique": "Fotografie, print op aanvraag",
+      "price": "Op aanvraag",
+      "status": "Beschikbaar",
+      "image": "img/09.jpg",
+      "alt": "Kalksteen met mosselen aan de rand van de branding"
+    },
+    {
+      "title": "Krastekeningen",
+      "category": "Tekeningen",
+      "technique": "Potlood op papier",
+      "price": "Op aanvraag",
+      "status": "Beschikbaar",
+      "image": "img/10.jpg",
+      "alt": "Vijf witte krastekeningen op zwart papier"
+    },
+    {
+      "title": "Steen op het strand",
+      "category": "Fotografie",
+      "technique": "Fotografie, print op aanvraag",
+      "price": "Op aanvraag",
+      "status": "Beschikbaar",
+      "image": "img/11.jpg",
+      "alt": "Steen op het zand, bedekt met zeepokken en groen wier"
+    },
+    {
+      "title": "Golf op de rots",
+      "category": "Schilderkunst",
+      "technique": "Olieverf op doek",
+      "price": "Op aanvraag",
+      "status": "Beschikbaar",
+      "image": "img/q1733.jpg",
+      "alt": "Schilderij: een golf breekt wit schuimend over een groene rots bij een okergeel strand"
+    },
+    {
+      "title": "Vliegers in het veld",
+      "category": "Schilderkunst",
+      "technique": "Olieverf op doek",
+      "price": "Op aanvraag",
+      "status": "Beschikbaar",
+      "image": "img/12.jpg",
+      "alt": "Schilderij: twee bruine vliegers in een droog veld voor een bosrand"
+    },
+    {
+      "title": "Rotswand in mist",
+      "category": "Fotografie",
+      "technique": "Fotografie, print op aanvraag",
+      "price": "Op aanvraag",
+      "status": "Beschikbaar",
+      "image": "img/13.jpg",
+      "alt": "Rotswand vol mosselen en wier naast de branding in de mist"
+    },
+    {
+      "title": "Rots in de mist",
+      "category": "Video",
+      "technique": "Video",
+      "price": "Op aanvraag",
+      "status": "Beschikbaar",
+      "video": "vid/440c2fc6-IMG_7310.mp4",
+      "image": "vid/440c2fc6-IMG_7310.jpg",
+      "alt": "Video: begroeide rots in helder water, met mist erachter"
+    },
+    {
+      "title": "Testkopje (360°)",
+      "category": "Keramiek",
+      "technique": "Steengoed, gespikkeld glazuur",
+      "price": "Op aanvraag",
+      "status": "Beschikbaar",
+      "image": "spin/kopje/00.jpg",
+      "alt": "Gerenderd testkopje met blauwgrijs gespikkeld glazuur en een onverglaasde voet",
+      "spin": "spin/kopje",
+      "frames": 36
+    },
+    {
+      "title": "Paard",
+      "category": "Keramiek",
+      "technique": "Klei",
+      "price": "Op aanvraag",
+      "status": "Beschikbaar",
+      "image": "img/15.jpg",
+      "alt": "Keramiek: een gestileerd paard, wit en grijsblauw geglazuurd"
+    },
+    {
+      "title": "Kokerwormrif",
+      "category": "Fotografie",
+      "technique": "Fotografie, print op aanvraag",
+      "price": "Op aanvraag",
+      "status": "Beschikbaar",
+      "image": "img/16.jpg",
+      "alt": "Honingraatstructuur van kokerwormen tussen mosselen en zeesla"
+    },
+    {
+      "title": "Modelstudie I",
+      "category": "Tekeningen",
+      "technique": "Potlood op papier",
+      "price": "Op aanvraag",
+      "status": "Beschikbaar",
+      "image": "img/17.jpg",
+      "alt": "Potloodstudies van een zittend en gebogen model"
+    },
+    {
+      "title": "Baai met kelp",
+      "category": "Fotografie",
+      "technique": "Fotografie, print op aanvraag",
+      "price": "Op aanvraag",
+      "status": "Beschikbaar",
+      "image": "img/18.jpg",
+      "alt": "Kleine baai met kelp op het zand onder kalkstenen rotsen"
+    },
+    {
+      "title": "Vilt",
+      "category": "Textiel",
+      "technique": "Vilt en wol",
+      "price": "Op aanvraag",
+      "status": "Beschikbaar",
+      "image": "img/19.jpg",
+      "alt": "Werk van losse wol in zand, grijs, lichtgroen en donkerblauw"
+    },
+    {
+      "title": "Schuim",
+      "category": "Fotografie",
+      "technique": "Fotografie, print op aanvraag",
+      "price": "Op aanvraag",
+      "status": "Beschikbaar",
+      "image": "img/20.jpg",
+      "alt": "Schuimende golven over zand en kalksteen met mosselen"
+    },
+    {
+      "title": "Wier in de stroming",
+      "category": "Video",
+      "technique": "Video",
+      "price": "Op aanvraag",
+      "status": "Beschikbaar",
+      "video": "vid/dad237b7-IMG_7288.mp4",
+      "image": "vid/dad237b7-IMG_7288.jpg",
+      "alt": "Video: lang bruin wier beweegt in stromend water"
+    },
+    {
+      "title": "Palmen",
+      "category": "Schilderkunst",
+      "technique": "Olieverf op doek",
+      "price": "Op aanvraag",
+      "status": "Beschikbaar",
+      "image": "img/q1735.jpg",
+      "alt": "Schilderij: twee palmen in groen boven een okergele band"
+    },
+    {
+      "title": "Uitgesleten kalksteen",
+      "category": "Fotografie",
+      "technique": "Fotografie, print op aanvraag",
+      "price": "Op aanvraag",
+      "status": "Beschikbaar",
+      "image": "img/23.jpg",
+      "alt": "Gelaagde kalksteen met holtes en kleine mosselen"
+    },
+    {
+      "title": "Strand",
+      "category": "Tekeningen",
+      "technique": "Potlood op papier",
+      "price": "Op aanvraag",
+      "status": "Beschikbaar",
+      "image": "img/24.jpg",
+      "alt": "Schetsboek met potloodschetsen van een kust en golven"
+    },
+    {
+      "title": "Baai",
+      "category": "Fotografie",
+      "technique": "Fotografie, print op aanvraag",
+      "price": "Op aanvraag",
+      "status": "Beschikbaar",
+      "image": "img/25.jpg",
+      "alt": "Turquoise baai achter een rotsplateau vol mosselen"
+    },
+    {
+      "title": "Vier kommen",
+      "category": "Keramiek",
+      "technique": "Klei",
+      "price": "Op aanvraag",
+      "status": "Beschikbaar",
+      "image": "img/26.jpg",
+      "alt": "Vier ongebakken kommen van klei, op een rij"
+    },
+    {
+      "title": "Over het rif",
+      "category": "Fotografie",
+      "technique": "Fotografie, print op aanvraag",
+      "price": "Op aanvraag",
+      "status": "Beschikbaar",
+      "image": "img/27.jpg",
+      "alt": "Zeewater stroomt over rotsen met wier en kokerwormen"
+    },
+    {
+      "title": "Laagwater",
+      "category": "Video",
+      "technique": "Video",
+      "price": "Op aanvraag",
+      "status": "Beschikbaar",
+      "video": "vid/ffdb5078-IMG_7312.mp4",
+      "image": "vid/ffdb5078-IMG_7312.jpg",
+      "alt": "Video: wier en zand onder bewegend water"
+    },
+    {
+      "title": "Blauw",
+      "category": "Schilderkunst",
+      "technique": "Olieverf op doek",
+      "price": "Op aanvraag",
+      "status": "Beschikbaar",
+      "image": "img/29.jpg",
+      "alt": "Groot schilderij in diep blauw en wit op gekreukt papier"
+    },
+    {
+      "title": "Wier bij laagwater",
+      "category": "Fotografie",
+      "technique": "Fotografie, print op aanvraag",
+      "price": "Op aanvraag",
+      "status": "Beschikbaar",
+      "image": "img/30.jpg",
+      "alt": "Bruin wier en schuim op een rotsplateau bij laagwater"
+    },
+    {
+      "title": "Portretten",
+      "category": "Tekeningen",
+      "technique": "Potlood op papier",
+      "price": "Op aanvraag",
+      "status": "Beschikbaar",
+      "image": "img/31.jpg",
+      "alt": "Schetsboek met twee potloodportretten"
+    },
+    {
+      "title": "Kelp in de branding",
+      "category": "Fotografie",
+      "technique": "Fotografie, print op aanvraag",
+      "price": "Op aanvraag",
+      "status": "Beschikbaar",
+      "image": "img/32.jpg",
+      "alt": "Kelp drijft in kolkend water voor een rotswand"
+    },
+    {
+      "title": "Modelstudie II",
+      "category": "Tekeningen",
+      "technique": "Potlood op papier",
+      "price": "Op aanvraag",
+      "status": "Beschikbaar",
+      "image": "img/33.jpg",
+      "alt": "Potloodstudies van staande en gebogen figuren"
+    },
+    {
+      "title": "Mosselrots",
+      "category": "Fotografie",
+      "technique": "Fotografie, print op aanvraag",
+      "price": "Op aanvraag",
+      "status": "Beschikbaar",
+      "image": "img/34.jpg",
+      "alt": "Uitgesleten rots met clusters mosselen"
+    },
+    {
+      "title": "Tuin",
+      "category": "Tekeningen",
+      "technique": "Potlood op papier",
+      "price": "Op aanvraag",
+      "status": "Beschikbaar",
+      "image": "img/35.jpg",
+      "alt": "Schetsboek met potloodschetsen van planten en een hek"
+    },
+    {
+      "title": "Getijdenpoel",
+      "category": "Fotografie",
+      "technique": "Fotografie, print op aanvraag",
+      "price": "Op aanvraag",
+      "status": "Beschikbaar",
+      "image": "img/36.jpg",
+      "alt": "Rotsplateau met mosselen en een getijdenpoel aan helder water"
+    }
+  ]
+}
