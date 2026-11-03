@@ -164,7 +164,8 @@
       "price": "Op aanvraag",
       "status": "Beschikbaar",
       "alt": "Een toren van gestapelde keramieken vormen en stenen, in een baai tussen gele kliffen aan zee",
-      "alt_en": "A tower of stacked ceramic forms and stones in a cove between yellow cliffs by the sea"
+      "alt_en": "A tower of stacked ceramic forms and stones in a cove between yellow cliffs by the sea",
+      "solo": true
     },
     {
       "title": "Buste met nachtvlinders",
@@ -176,7 +177,9 @@
       "price": "Op aanvraag",
       "status": "Beschikbaar",
       "alt": "Geglazuurde keramieken buste van een vrouw met gesloten ogen en lang blond haar, een blauwe nachtvlinder over haar mond, een parelketting en twee kleinere vlinders op haar hoofd en schouder",
-      "alt_en": "Glazed ceramic bust of a woman with closed eyes and long blond hair, a blue moth over her mouth, a pearl necklace and two smaller moths on her head and shoulder"
+      "alt_en": "Glazed ceramic bust of a woman with closed eyes and long blond hair, a blue moth over her mouth, a pearl necklace and two smaller moths on her head and shoulder",
+      "featured": true,
+      "solo": true
     },
     {
       "title": "Schildering in beweging",
