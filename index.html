@@ -158,6 +158,17 @@ body{font:400 13px/1.5 var(--sans);letter-spacing:.04em}
 .btn{padding:.7rem 1.1rem}
 .buy-info{gap:.6rem}
 @media (max-width:820px){.menu .cats a,.menu .links a{font-size:18px}}
+
+/* Category view: works in a row under the heading */
+.catview{display:grid;gap:1.4rem;width:100%}
+.cathead{margin:0;font-family:var(--sans);font-size:13px;font-weight:400;letter-spacing:.04em;color:var(--text)}
+.row{display:flex;flex-wrap:wrap;gap:2rem 1.6rem;align-items:flex-end}
+.row .work{width:auto!important;margin:0!important;align-self:auto!important;max-width:100%}
+.row .work img,.row .work video{height:clamp(200px,24vw,320px);width:auto;max-width:100%;object-fit:contain}
+.row[data-empty="1"]::after{content:"—";color:var(--quiet)}
+.row .work figcaption span:last-child:empty{display:none}
+.row .work figcaption span:first-child{color:var(--text)}
+@media (max-width:820px){.row{gap:1.6rem 1rem}.row .work img,.row .work video{height:auto;width:100%;max-height:70vh}}
 </style>
 </head>
 <body>
@@ -187,6 +198,7 @@ body{font:400 13px/1.5 var(--sans);letter-spacing:.04em}
 
   <main id="wall">
     <p class="loading" id="loading" data-i18n="loading">Werken laden…</p>
+    <section class="catview" id="catview" hidden><h2 class="cathead" id="catHead"></h2><div class="row" id="row"></div></section>
     <section class="about" id="over">
       <h2 data-i18n="about_h">Over Merel</h2>
       <p data-i18n="about_p">Merel van Dijk is een ervaren kunstenaar in schilderkunst en keramiek. Fotografie is haar manier van kijken: ze gaat dicht op rots, water en zand staan, tot er alleen structuur overblijft.</p>
@@ -293,7 +305,7 @@ const priceTxt=p=>(!p||p==='Op aanvraag')?tr('on_request'):p;
 function workHTML(w){
   const cat=CATS[w.category]||'schilderkunst',sold=w.status==='Verkocht',catLbl=tr('cat_'+cat);
   w={...w,title:L(w,'title'),technique:L(w,'technique'),alt:L(w,'alt'),category:catLbl,price:priceTxt(w.price)};
-  const right=esc(catLbl)+(sold?' · '+esc(tr('sold')):'');
+  const right=sold?esc(tr('sold')):'';
   const data=`data-cat="${cat}" data-catlabel="${esc(w.category)}" data-tech="${esc(w.technique)}" data-t="${esc(w.title)}" data-price="${esc(w.price||'Op aanvraag')}" data-status="${esc(w.status||'Beschikbaar')}"`;
   let media;
   if(w.video){media=`<video data-src="${esc(rel(w.video))}" ${w.image?`poster="${esc(rel(w.image))}"`:''} muted loop playsinline autoplay preload="metadata" aria-label="${esc(w.alt||w.title)}"></video>`;}
@@ -308,10 +320,15 @@ function route(){
   const h=location.hash.slice(1);
   const cats=['schilderkunst','fotografie','video','keramiek','tekeningen','textiel'];
   const cat=cats.includes(h)?h:null;
-  let n=0;
-  works.forEach(w=>{const show=!cat||w.dataset.cat===cat;w.hidden=!show;if(show){w.classList.remove('w1','w2','w3','w4','w5');w.classList.add('w'+(n%5+1));n++;}});
+  // Front page shows no works; a category shows its works side by side under its heading
+  works.forEach(w=>{w.hidden=!cat||w.dataset.cat!==cat;});
+  const cv=document.getElementById('catview');cv.hidden=!cat;
+  if(cat){const hd=document.getElementById('catHead');hd.dataset.i18n='cat_'+cat;hd.textContent=tr('cat_'+cat);
+    const any=works.some(w=>w.dataset.cat===cat);document.getElementById('row').dataset.empty=any?'':'1';}
+  const about=document.getElementById('over'),req=document.getElementById('aanvragen');
+  about.hidden=!(h==='over'||h==='contact');req.hidden=h!=='aanvragen';
   document.querySelectorAll('.cats a').forEach(a=>a.setAttribute('aria-current',a.dataset.cat===cat?'true':'false'));
-  if(cat||h==='alles'||!h) scrollTo(0,0);
+  scrollTo(0,0);
 }
 addEventListener('hashchange',route);
 // Work videos: load when they come near the screen, play while visible
@@ -329,8 +346,8 @@ function renderWorks(){
   const list=WORKS.filter(w=>w&&w.title&&(w.image||w.video));
   const old=document.getElementById('maint');if(old)old.remove();
   document.querySelector('[data-i18n="about_q"]').hidden=!list.length;
-  document.getElementById('over').insertAdjacentHTML('beforebegin',list.length?list.map(workHTML).join('\n')
-    :`<section class="maint" id="maint"><h2>${esc(tr('maint_h'))}</h2><p>${esc(tr('maint_p'))}</p></section>`);
+  document.getElementById('row').innerHTML=list.map(workHTML).join('\n');
+  if(!list.length)document.getElementById('catview').insertAdjacentHTML('beforebegin',`<section class="maint" id="maint"><h2>${esc(tr('maint_h'))}</h2><p>${esc(tr('maint_p'))}</p></section>`);
   const ld=document.getElementById('loading');if(ld)ld.remove();
   works=[...document.querySelectorAll('.work')];
   document.querySelectorAll('.work img').forEach(markTall);
