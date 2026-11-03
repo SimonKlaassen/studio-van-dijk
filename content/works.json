@@ -126,6 +126,18 @@
       "alt": "Tweeluik: twee houtskoolportretten, een hoekige figuur met puntig haar en een vrouw met golvend haar en gestreepte trui",
       "alt_en": "Diptych: two charcoal portraits, an angular figure with spiky hair and a woman with wavy hair and a striped top",
       "image2": "img/tekeningen/tekening-8.jpg"
+    },
+    {
+      "title": "Beschilderde champagneflessen",
+      "title_en": "Hand-painted champagne bottles",
+      "category": "Champagne",
+      "image": "img/champagne/flessen.jpg",
+      "technique": "Handbeschilderd glas",
+      "technique_en": "Hand-painted glass",
+      "price": "Op aanvraag",
+      "status": "Beschikbaar",
+      "alt": "Vijf champagneflessen, met de hand beschilderd met roze heidetakjes en oranjerode bloemen, op een tafeltje in een groene tuin",
+      "alt_en": "Five champagne bottles hand-painted with pink heather sprigs and orange-red flowers, on a small table in a green garden"
     }
   ]
 }

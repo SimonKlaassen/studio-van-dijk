@@ -51,7 +51,7 @@ collections:
               - name: category
                 label: Categorie
                 widget: select
-                options: [Schilderkunst, Fotografie, Video, Keramiek, Tekeningen, Textiel]
+                options: [Schilderkunst, Fotografie, Video, Keramiek, Tekeningen, Textiel, Champagne]
                 default: Schilderkunst
               - name: image
                 label: Foto
