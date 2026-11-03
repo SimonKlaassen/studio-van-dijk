@@ -137,7 +137,8 @@
       "price": "Op aanvraag",
       "status": "Beschikbaar",
       "alt": "Vijf champagneflessen, met de hand beschilderd met roze heidetakjes en oranjerode bloemen, op een tafeltje in een groene tuin",
-      "alt_en": "Five champagne bottles hand-painted with pink heather sprigs and orange-red flowers, on a small table in a green garden"
+      "alt_en": "Five champagne bottles hand-painted with pink heather sprigs and orange-red flowers, on a small table in a green garden",
+      "featured": true
     }
   ]
 }
