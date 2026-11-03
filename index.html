@@ -201,6 +201,14 @@ html.buy-open .bgtex{display:none}
 .buy::before{content:"";position:fixed;left:0;right:0;top:0;height:100lvh;z-index:-1;background:#fbfaf8 url(bg-light.jpg) center/cover no-repeat;pointer-events:none}
 .buy{isolation:isolate}
 
+
+/* Flow lines around the works on a category page; the home lines dim behind them */
+.bgtex{transition:opacity .9s ease}
+html.in-cat .bgtex{opacity:.35}
+#flow{position:absolute;top:0;left:0;z-index:0;pointer-events:none;animation:flowIn 1s ease}
+@keyframes flowIn{from{opacity:0}to{opacity:1}}
+html.buy-open #flow{display:none}
+html,body{overflow-x:clip}
 </style>
 </head>
 <body>
@@ -365,6 +373,7 @@ function route(){
   about.hidden=!(h==='over'||h==='contact');req.hidden=h!=='aanvragen';
   document.querySelectorAll('.cats a').forEach(a=>a.setAttribute('aria-current',a.dataset.cat===cat?'true':'false'));
   scrollTo(0,0);
+  document.documentElement.classList.toggle('in-cat',!!cat);scheduleFlow();
 }
 addEventListener('hashchange',route);
 // Work videos: load when they come near the screen, play while visible
@@ -391,6 +400,7 @@ function renderWorks(){
   const ld=document.getElementById('loading');if(ld)ld.remove();
   works=[...document.querySelectorAll('.work')];
   document.querySelectorAll('.work img').forEach(markTall);
+  document.querySelectorAll('#row img').forEach(i=>i.addEventListener('load',scheduleFlow));
   route();initVideos();
 }
 fetch('content/works.json',{cache:'no-cache'}).then(r=>r.json()).then(d=>{WORKS=d.works||[];renderWorks();})
@@ -441,6 +451,67 @@ function show(f){if(!spin)return;spin.f=((Math.round(f)%spin.n)+spin.n)%spin.n;s
 // Browser bar colour on phones follows the white work view
 function setTheme(c){let m=document.querySelector('meta[name=theme-color]');if(!m){m=document.createElement('meta');m.name='theme-color';document.head.appendChild(m);}m.content=c;}
 setTheme('#141312');
+
+// Flow lines: on a category page the background lines grow out of the edges of the works.
+// Each work's image is mirrored outward, softened and traced as contour lines, so the lines
+// continue the shapes at the edge of the work and fade out into the page.
+let flowCv=null,flowTok=0,flowTimer=0;const flowCache={};
+function scheduleFlow(){clearTimeout(flowTimer);flowTimer=setTimeout(drawFlow,140);}
+function flowLoad(s){if(!flowCache[s])flowCache[s]=new Promise(r=>{const i=new Image();i.onload=()=>r(i);i.onerror=()=>r(null);i.src=s;});return flowCache[s];}
+function flowMS(v,W,H,L,seg){for(let y=0;y<H-1;y++)for(let x=0;x<W-1;x++){
+  const a=v[y*W+x],b=v[y*W+x+1],c=v[(y+1)*W+x+1],d=v[(y+1)*W+x];
+  const k=(a>L?8:0)|(b>L?4:0)|(c>L?2:0)|(d>L?1:0);if(k===0||k===15)continue;
+  const f=(p,q)=>(L-p)/(q-p||1e-6);
+  const T=[x+f(a,b),y],R=[x+1,y+f(b,c)],B=[x+f(d,c),y+1],Lf=[x,y+f(a,d)];
+  switch(k){case 1:case 14:seg(Lf,B);break;case 2:case 13:seg(B,R);break;case 3:case 12:seg(Lf,R);break;
+    case 4:case 11:seg(T,R);break;case 5:seg(Lf,T);seg(B,R);break;case 6:case 9:seg(T,B);break;
+    case 7:case 8:seg(Lf,T);break;case 10:seg(T,R);seg(Lf,B);break;}}}
+function flowBlur(v,W,H,r){const o=new Float32Array(v.length);
+  for(let y=0;y<H;y++){let s=0;for(let x=-r;x<=r;x++)s+=v[y*W+Math.min(W-1,Math.max(0,x))];
+    for(let x=0;x<W;x++){o[y*W+x]=s/(2*r+1);s+=v[y*W+Math.min(W-1,x+r+1)]-v[y*W+Math.max(0,x-r)];}}
+  for(let x=0;x<W;x++){let s=0;for(let y=-r;y<=r;y++)s+=o[Math.min(H-1,Math.max(0,y))*W+x];
+    for(let y=0;y<H;y++){v[y*W+x]=s/(2*r+1);s+=o[Math.min(H-1,y+r+1)*W+x]-o[Math.max(0,y-r)*W+x];}}}
+function flowTrace(ctx,it,im,P,cell,buckets){
+  const gw=Math.max(3,Math.round(it.w/cell)),gh=Math.max(3,Math.round(it.h/cell));
+  const oc=document.createElement('canvas');oc.width=gw;oc.height=gh;const o=oc.getContext('2d',{willReadFrequently:true});
+  o.drawImage(im,0,0,gw,gh);let d;try{d=o.getImageData(0,0,gw,gh).data;}catch(e){return;}
+  const lum=new Float32Array(gw*gh);for(let i=0;i<gw*gh;i++)lum[i]=(.3*d[i*4]+.59*d[i*4+1]+.11*d[i*4+2])/255;
+  const pc=Math.ceil(P/cell),W=gw+2*pc,H=gh+2*pc,v=new Float32Array(W*H);
+  const rf=(a,n)=>{a=((a%(2*n))+2*n)%(2*n);return a<n?a:2*n-1-a;};
+  for(let y=0;y<H;y++)for(let x=0;x<W;x++)v[y*W+x]=lum[rf(y-pc,gh)*gw+rf(x-pc,gw)];
+  flowBlur(v,W,H,2);flowBlur(v,W,H,1);
+  const s=Array.from(lum).sort((a,b)=>a-b),q=f=>s[Math.floor(f*(s.length-1))];
+  const cx=it.w/gw,cy=it.h/gh;
+  for(const L of [q(.3),q(.5),q(.7)])flowMS(v,W,H,L,(A,Bp)=>{
+    const ax=it.x+(A[0]-pc+.5)*cx,ay=it.y+(A[1]-pc+.5)*cy,bx=it.x+(Bp[0]-pc+.5)*cx,by=it.y+(Bp[1]-pc+.5)*cy;
+    const mx=(ax+bx)/2,my=(ay+by)/2;
+    const dx=Math.max(it.x-mx,0,mx-(it.x+it.w)),dy=Math.max(it.y-my,0,my-(it.y+it.h)),dist=Math.hypot(dx,dy);
+    if(dist<=0)return;const a=1-dist/P;if(a<=0)return;
+    buckets[Math.min(5,Math.floor(Math.pow(a,1.2)*6))].push(ax,ay,bx,by);});
+}
+async function drawFlow(){
+  if(!flowCv){flowCv=document.createElement('canvas');flowCv.id='flow';flowCv.setAttribute('aria-hidden','true');document.body.appendChild(flowCv);}
+  const tok=++flowTok,cv=flowCv,cat=document.getElementById('catview');
+  const els=cat.hidden?[]:[...document.querySelectorAll('#row .work:not([hidden]) img, #row .work:not([hidden]) video')];
+  cv.width=cv.height=0;cv.style.width=cv.style.height='0px';
+  if(!els.length)return;
+  const mobile=innerWidth<821,P=mobile?70:170,cell=mobile?5:6;
+  const docW=document.documentElement.clientWidth,docH=document.documentElement.scrollHeight;
+  const items=[];
+  for(const el of els){const r=el.getBoundingClientRect();if(r.width<24||r.height<24)continue;
+    const s=el.tagName==='VIDEO'?el.getAttribute('poster'):(el.currentSrc||el.src);if(!s)continue;
+    items.push({x:r.left+scrollX,y:r.top+scrollY,w:r.width,h:r.height,s});}
+  const imgs=await Promise.all(items.map(i=>flowLoad(i.s)));
+  if(tok!==flowTok)return;
+  const dpr=Math.min(2,devicePixelRatio||1,Math.sqrt(14e6/(docW*docH)));
+  cv.width=Math.round(docW*dpr);cv.height=Math.round(docH*dpr);cv.style.width=docW+'px';cv.style.height=docH+'px';
+  const ctx=cv.getContext('2d');ctx.setTransform(dpr,0,0,dpr,0,0);ctx.lineWidth=1;ctx.lineCap='round';
+  const buckets=[[],[],[],[],[],[]];
+  items.forEach((it,k)=>{if(imgs[k])flowTrace(ctx,it,imgs[k],P,cell,buckets);});
+  buckets.forEach((b,i)=>{if(!b.length)return;ctx.strokeStyle=`rgba(236,228,216,${(.04+.24*(i+1)/6).toFixed(3)})`;ctx.beginPath();
+    for(let j=0;j<b.length;j+=4){ctx.moveTo(b[j],b[j+1]);ctx.lineTo(b[j+2],b[j+3]);}ctx.stroke();});
+}
+addEventListener('resize',scheduleFlow);
 // Purchase panel
 const buy=document.getElementById('buy'),f=document.getElementById('bForm'),done=document.getElementById('bDone'),bBuy=document.getElementById('bBuy');
 let last=null;
