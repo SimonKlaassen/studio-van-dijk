@@ -1,3 +1,70 @@
 {
-  "works": []
+  "works": [
+    {
+      "title": "Zonder titel I",
+      "title_en": "Untitled I",
+      "category": "Tekeningen",
+      "image": "img/tekeningen/tekening-1.jpg",
+      "technique": "Krijt en verf op zwart papier",
+      "technique_en": "Chalk and paint on black paper",
+      "price": "Op aanvraag",
+      "status": "Beschikbaar",
+      "alt": "Witte krijtlijnen en verfstreken op zwart papier, schuin over het blad"
+    },
+    {
+      "title": "Zonder titel II",
+      "title_en": "Untitled II",
+      "category": "Tekeningen",
+      "image": "img/tekeningen/tekening-2.jpg",
+      "technique": "Krijt op zwart papier",
+      "technique_en": "Chalk on black paper",
+      "price": "Op aanvraag",
+      "status": "Beschikbaar",
+      "alt": "Witte krijtlijnen op zwart papier: golvende arcering boven, rotsachtige vormen onder"
+    },
+    {
+      "title": "Zonder titel III",
+      "title_en": "Untitled III",
+      "category": "Tekeningen",
+      "image": "img/tekeningen/tekening-3.jpg",
+      "technique": "Krijt op zwart papier",
+      "technique_en": "Chalk on black paper",
+      "price": "Op aanvraag",
+      "status": "Beschikbaar",
+      "alt": "Witte krijtlijnen op zwart papier: horizontale strepen en kluwens"
+    },
+    {
+      "title": "Zonder titel IV",
+      "title_en": "Untitled IV",
+      "category": "Tekeningen",
+      "image": "img/tekeningen/tekening-4.jpg",
+      "technique": "Krijt en verf op zwart papier",
+      "technique_en": "Chalk and paint on black paper",
+      "price": "Op aanvraag",
+      "status": "Beschikbaar",
+      "alt": "Witte verfstreken en kruisende krijtlijnen op zwart papier"
+    },
+    {
+      "title": "Zonder titel V",
+      "title_en": "Untitled V",
+      "category": "Tekeningen",
+      "image": "img/tekeningen/tekening-5.jpg",
+      "technique": "Krijt op zwart papier",
+      "technique_en": "Chalk on black paper",
+      "price": "Op aanvraag",
+      "status": "Beschikbaar",
+      "alt": "Witte verticale arcering in golven boven, rotsvormen onder, op zwart papier"
+    },
+    {
+      "title": "Zonder titel VI",
+      "title_en": "Untitled VI",
+      "category": "Tekeningen",
+      "image": "img/tekeningen/tekening-6.jpg",
+      "technique": "Krijt op catalogusomslag",
+      "technique_en": "Chalk on a catalogue cover",
+      "price": "Op aanvraag",
+      "status": "Beschikbaar",
+      "alt": "Witte krijtarcering over een opengeslagen zwarte catalogusomslag met streepjescodes"
+    }
+  ]
 }
