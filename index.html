@@ -181,8 +181,8 @@ body{font:400 13px/1.5 var(--sans);letter-spacing:.04em}
 .row .work.feat.solo img,.row .work.feat.solo video{height:min(78vh,760px);width:auto;max-width:100%}
 .row .work.feat.solo video,.row.single .work video{height:auto;width:min(100%,calc(78vh * 16 / 9));max-height:78vh}
 /* A lone landscape video in a category: as large as possible, reaching a bit into the empty space left of the column */
-@media (min-width:821px){.row.single .work:has(video){flex:0 0 auto;max-width:none!important;width:calc(100% + min(12vw,180px))!important;margin-left:calc(-1 * min(12vw,180px))!important;flex-basis:auto}
-.row.single .work video{width:100%!important;height:auto!important;max-height:none!important}}
+@media (min-width:821px){.row.single .work:has(video){flex:0 0 auto;width:min(80%,1000px)!important}
+.row.single .work video{width:100%!important;height:auto!important;max-height:70vh!important}}
 @media (max-width:820px){.row .work.feat.solo img,.row .work.feat.solo video{height:auto;width:100%}}
 .row.single .work img,.row.single .work video{height:min(82vh,900px);width:auto;max-width:100%}
 @media (max-width:820px){.row.single .work img,.row.single .work video{height:auto;width:100%}}
