@@ -200,6 +200,9 @@ body{font:400 13px/1.5 var(--sans);letter-spacing:.04em}
 html.buy-open,html.buy-open body{background:#fbfaf8!important}
 html.buy-open .bgtex{display:none}
 .buy{bottom:auto;min-height:100%;height:100lvh}
+
+.grap{margin:0;align-self:flex-start}
+.grap img{display:block;width:min(100%,640px);height:auto}
 </style>
 </head>
 <body>
@@ -230,6 +233,8 @@ html.buy-open .bgtex{display:none}
 
   <main id="wall">
     <p class="loading" id="loading" data-i18n="loading">Werken laden…</p>
+    <!-- GRAP: tijdelijk, weghalen = dit blok en img/grap.gif verwijderen -->
+    <figure class="grap" id="grap" hidden><img src="img/grap.gif" alt=""></figure>
     <section class="catview" id="catview" hidden><h2 class="cathead" id="catHead"></h2><div class="row" id="row"></div></section>
     <section class="about" id="over">
       <h2 data-i18n="about_h">Over Merel</h2>
@@ -358,6 +363,7 @@ function route(){
   document.querySelectorAll('.rowbreak').forEach(s=>{s.hidden=s.dataset.cat!==cat;});
   document.getElementById('row').classList.toggle('single',works.filter(w=>!w.hidden).length===1);
   const cv=document.getElementById('catview');cv.hidden=!cat;
+  const gp=document.getElementById('grap');if(gp)gp.hidden=!!cat||!!h&&h!=='alles';
   if(cat){const hd=document.getElementById('catHead');hd.dataset.i18n='cat_'+cat;hd.textContent=tr('cat_'+cat);
     const any=works.some(w=>w.dataset.cat===cat);document.getElementById('row').dataset.empty=any?'':'1';}
   const about=document.getElementById('over'),req=document.getElementById('aanvragen');
