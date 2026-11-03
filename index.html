@@ -169,6 +169,14 @@ body{font:400 13px/1.5 var(--sans);letter-spacing:.04em}
 .row .work figcaption span:last-child:empty{display:none}
 .row .work figcaption span:first-child{color:var(--text)}
 @media (max-width:820px){.row{gap:1.6rem 1rem}.row .work img,.row .work video{height:auto;width:100%;max-height:70vh}}
+
+/* Diptych: two images shown as one work */
+.duo{display:flex;gap:.6rem;align-items:flex-end}
+.duo img{flex:1 1 0;min-width:0}
+.row .work .duo img{flex:none}
+.bduo{display:flex;gap:1rem;align-items:center;justify-content:center;max-width:100%}
+.bduo.two img{max-width:calc(50% - .5rem)!important}
+@media (max-width:820px){.row .work .duo img{height:auto;width:calc(50% - .3rem);flex:none}}
 </style>
 </head>
 <body>
@@ -232,7 +240,7 @@ body{font:400 13px/1.5 var(--sans);letter-spacing:.04em}
 
 <div class="buy" id="buy" hidden role="dialog" aria-modal="true" aria-labelledby="bTitle">
   <div class="buy-in">
-    <div class="buy-img"><img id="bImg" alt=""><div class="spin" id="bSpin" hidden><img id="bSpinImg" alt="" draggable="false"><span class="spinhint" data-i18n="spin_hint">Sleep om te draaien</span></div><video id="bVid" hidden controls loop muted playsinline></video></div>
+    <div class="buy-img"><span class="bduo" id="bDuo"><img id="bImg" alt=""><img id="bImg2" alt="" hidden></span><div class="spin" id="bSpin" hidden><img id="bSpinImg" alt="" draggable="false"><span class="spinhint" data-i18n="spin_hint">Sleep om te draaien</span></div><video id="bVid" hidden controls loop muted playsinline></video></div>
     <div class="buy-info">
       <button class="close" type="button" id="bClose" data-i18n="close_x">Sluiten ✕</button>
       <h2 id="bTitle"></h2>
@@ -309,6 +317,7 @@ function workHTML(w){
   const data=`data-cat="${cat}" data-catlabel="${esc(w.category)}" data-tech="${esc(w.technique)}" data-t="${esc(w.title)}" data-price="${esc(w.price||'Op aanvraag')}" data-status="${esc(w.status||'Beschikbaar')}"`;
   let media;
   if(w.video){media=`<video data-src="${esc(rel(w.video))}" ${w.image?`poster="${esc(rel(w.image))}"`:''} muted loop playsinline autoplay preload="metadata" aria-label="${esc(w.alt||w.title)}"></video>`;}
+  else if(w.image2){media=`<span class="duo"><img src="${esc(rel(w.image))}" alt="${esc(w.alt||w.title)}" loading="lazy" decoding="async"><img src="${esc(rel(w.image2))}" alt="" loading="lazy" decoding="async"></span>`;}
   else{media=`<img src="${esc(rel(w.image))}" alt="${esc(w.alt||w.title)}" loading="lazy" decoding="async">`+(w.spin?'<span class="badge360">360°</span>':'');}
   const extra=(w.video?` data-video="${esc(rel(w.video))}"`:'')+(w.spin?` data-spin="${esc(rel(w.spin))}" data-frames="${+w.frames||36}"`:'');
   return `<figure class="work" ${data}${extra}><button type="button" aria-label="${esc(w.title)}, ${tr(sold?'view':'view_buy')}">${media}</button><figcaption><span>${esc(w.title)}</span><span>${right}</span></figcaption></figure>`;
@@ -407,6 +416,9 @@ document.getElementById('wall').addEventListener('click',e=>{
   const im=w.querySelector('img'),bI=document.getElementById('bImg'),bV=document.getElementById('bVid');
   if(w.dataset.video){bI.hidden=true;bV.hidden=false;bV.dataset.src=w.dataset.video;loadVideo(bV).then(()=>bV.play()).catch(()=>{});}
   else{bV.hidden=true;bV.pause();bV.removeAttribute('src');bI.hidden=false;bI.src=im.src;bI.alt=im.alt;}
+  const ims=w.querySelectorAll('img'),bI2=document.getElementById('bImg2');
+  if(ims.length>1&&!w.dataset.video){bI2.src=ims[1].src;bI2.hidden=false;}else{bI2.hidden=true;bI2.removeAttribute('src');}
+  document.getElementById('bDuo').classList.toggle('two',!bI2.hidden);
   stopSpin();if(w.dataset.spin){bI.hidden=true;startSpin(w.dataset.spin,+w.dataset.frames,im.alt);}
   document.getElementById('bTitle').textContent=w.dataset.t;
   document.getElementById('bCat').textContent=w.dataset.catlabel;
