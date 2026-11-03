@@ -65,6 +65,30 @@
       "price": "Op aanvraag",
       "status": "Beschikbaar",
       "alt": "Witte krijtarcering over een opengeslagen zwarte catalogusomslag met streepjescodes"
+    },
+    {
+      "title": "Portret I",
+      "title_en": "Portrait I",
+      "category": "Tekeningen",
+      "image": "img/tekeningen/tekening-7.jpg",
+      "technique": "Houtskool op papier",
+      "technique_en": "Charcoal on paper",
+      "price": "Op aanvraag",
+      "status": "Beschikbaar",
+      "alt": "Houtskooltekening van een hoekige figuur met puntig haar en handen in de zij",
+      "alt_en": "Charcoal drawing of an angular figure with spiky hair and hands on hips"
+    },
+    {
+      "title": "Portret II",
+      "title_en": "Portrait II",
+      "category": "Tekeningen",
+      "image": "img/tekeningen/tekening-8.jpg",
+      "technique": "Houtskool op papier",
+      "technique_en": "Charcoal on paper",
+      "price": "Op aanvraag",
+      "status": "Beschikbaar",
+      "alt": "Houtskoolportret van een vrouw met golvend haar en een gestreepte trui",
+      "alt_en": "Charcoal portrait of a woman with wavy hair and a striped top"
     }
   ]
 }
