@@ -1,6 +1,19 @@
 {
   "works": [
     {
+      "title": "De tuin",
+      "title_en": "The garden",
+      "category": "Tekeningen",
+      "image": "img/tekeningen/tuin.jpg",
+      "featured": true,
+      "technique": "Houtskool op papier",
+      "technique_en": "Charcoal on paper",
+      "price": "Op aanvraag",
+      "status": "Beschikbaar",
+      "alt": "Grote houtskooltekening van een droomtuin: een zebra en een reiger bij een vijver onder een boom met witte takken en een volle maan, een gestalte met ogen in een struik, cipressen, en een vrouw in een lange jurk onder een rozenboog in het tegenlicht",
+      "alt_en": "Large charcoal drawing of a dream garden: a zebra and a heron by a pond under a tree with white branches and a full moon, a figure with eyes in a bush, cypresses, and a woman in a long dress under a rose arch against the light"
+    },
+    {
       "title": "Techno Waves I",
       "title_en": "Techno Waves I",
       "category": "Tekeningen",

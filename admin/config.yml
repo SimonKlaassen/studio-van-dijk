@@ -63,6 +63,7 @@ collections:
                 widget: image
                 required: false
                 hint: "Alleen als het werk uit twee delen bestaat; ze staan dan naast elkaar als één werk."
+              - { name: featured, label: Groot bovenaan, widget: boolean, required: false, default: false, hint: "Toon dit werk over de hele breedte bovenaan de categorie." }
               - name: video
                 label: Video
                 widget: file
