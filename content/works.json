@@ -197,32 +197,32 @@
       "alt_en": "Video: a painting in white, ice blue and dark brown in which the white areas slowly move"
     },
     {
-      "title": "Beschilderde magnum (tweeluik)",
-      "title_en": "Painted magnum (diptych)",
+      "title": "Merel aan het werk",
+      "title_en": "Merel at work",
       "category": "Champagne",
       "image": "img/champagne/merel-schildert.jpg",
-      "image2": "img/champagne/fles-tafel.jpg",
-      "technique": "Handbeschilderd glas",
-      "technique_en": "Hand-painted glass",
-      "price": "Op aanvraag",
-      "status": "Beschikbaar",
-      "alt": "Tweeluik: Merel beschildert een champagnefles met roze bloesem in tegenlicht, en de afgewerkte fles op een houten tafel",
-      "alt_en": "Diptych: Merel painting a champagne bottle with pink blossom against the light, and the finished bottle on a wooden table"
-    },
-    {
-      "title": "Beschilderde magnum (video)",
-      "title_en": "Painted magnum (video)",
-      "category": "Champagne",
-      "video": "vid/champagne-fles.mp4",
-      "image": "vid/champagne-fles.jpg",
       "featured": true,
       "solo": true,
       "technique": "Handbeschilderd glas",
       "technique_en": "Hand-painted glass",
       "price": "Op aanvraag",
       "status": "Beschikbaar",
-      "alt": "Video: een hand draait een beschilderde champagnefles rond op tafel",
-      "alt_en": "Video: a hand turns a painted champagne bottle around on a table"
+      "alt": "Merel beschildert een champagnefles met roze bloesem, in tegenlicht",
+      "alt_en": "Merel painting a champagne bottle with pink blossom, against the light"
+    },
+    {
+      "title": "Beschilderde magnum (tweeluik)",
+      "title_en": "Painted magnum (diptych)",
+      "category": "Champagne",
+      "image": "vid/champagne-fles.jpg",
+      "image2": "img/champagne/fles-tafel.jpg",
+      "technique": "Handbeschilderd glas",
+      "technique_en": "Hand-painted glass",
+      "price": "Op aanvraag",
+      "status": "Beschikbaar",
+      "alt": "Tweeluik: video van een hand die de beschilderde fles ronddraait, en de fles op een houten tafel",
+      "alt_en": "Diptych: video of a hand turning the painted bottle, and the bottle on a wooden table",
+      "video": "vid/champagne-fles.mp4"
     }
   ]
 }
