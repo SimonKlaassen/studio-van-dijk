@@ -175,8 +175,10 @@ body{font:400 13px/1.5 var(--sans);letter-spacing:.04em}
 .duo img{flex:1 1 0;min-width:0}
 .row .work .duo img{flex:none;height:clamp(320px,38vw,580px)}
 .row .work:has(.duo){flex-basis:100%}
-.row .work.feat{flex-basis:100%;margin-bottom:1.5rem!important}
-.row .work.feat img{height:auto;width:min(100%,900px);max-height:68vh;object-fit:contain;object-position:left}
+.row .work.feat{margin-bottom:1.5rem!important}
+.row .work.feat img{height:clamp(240px,calc((100vw - 460px) / 2.2),520px);width:auto;max-width:100%;object-fit:contain}
+.rowbreak{flex-basis:100%;height:0}
+@media (max-width:820px){.row .work.feat img{height:auto;width:100%}}
 .bduo{display:flex;gap:1rem;align-items:center;justify-content:center;max-width:100%}
 .bduo.two img{max-width:calc(50% - .5rem)!important}
 @media (max-width:820px){.row .work .duo img{height:auto;width:calc(50% - .3rem);flex:none}}
@@ -358,7 +360,8 @@ function renderWorks(){
   const list=WORKS.filter(w=>w&&w.title&&(w.image||w.video));
   const old=document.getElementById('maint');if(old)old.remove();
   document.querySelector('[data-i18n="about_q"]').hidden=!list.length;
-  document.getElementById('row').innerHTML=list.map(workHTML).join('\n');
+  const lastFeat=list.map(w=>!!w.featured).lastIndexOf(true);
+  document.getElementById('row').innerHTML=list.map((w,i)=>workHTML(w)+(i===lastFeat?'<span class="rowbreak"></span>':'')).join('\n');
   if(!list.length)document.getElementById('catview').insertAdjacentHTML('beforebegin',`<section class="maint" id="maint"><h2>${esc(tr('maint_h'))}</h2><p>${esc(tr('maint_p'))}</p></section>`);
   const ld=document.getElementById('loading');if(ld)ld.remove();
   works=[...document.querySelectorAll('.work')];
