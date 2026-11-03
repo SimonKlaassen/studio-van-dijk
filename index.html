@@ -328,7 +328,6 @@ function renderWorks(){
   document.querySelectorAll('.work').forEach(w=>w.remove());
   const list=WORKS.filter(w=>w&&w.title&&(w.image||w.video));
   const old=document.getElementById('maint');if(old)old.remove();
-  document.querySelector('.cats').hidden=!list.length;
   document.querySelector('[data-i18n="about_q"]').hidden=!list.length;
   document.getElementById('over').insertAdjacentHTML('beforebegin',list.length?list.map(workHTML).join('\n')
     :`<section class="maint" id="maint"><h2>${esc(tr('maint_h'))}</h2><p>${esc(tr('maint_p'))}</p></section>`);
