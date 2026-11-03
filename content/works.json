@@ -139,6 +139,19 @@
       "alt": "Vijf champagneflessen, met de hand beschilderd met roze heidetakjes en oranjerode bloemen, op een tafeltje in een groene tuin",
       "alt_en": "Five champagne bottles hand-painted with pink heather sprigs and orange-red flowers, on a small table in a green garden",
       "featured": true
+    },
+    {
+      "title": "Draak en kraanvogel (tweeluik)",
+      "title_en": "Dragon and crane (diptych)",
+      "category": "Tekeningen",
+      "image": "img/tekeningen/draak.jpg",
+      "image2": "img/tekeningen/kraanvogel.jpg",
+      "technique": "Gouache op papier",
+      "technique_en": "Gouache on paper",
+      "price": "Op aanvraag",
+      "status": "Beschikbaar",
+      "alt": "Tweeluik in felle kleuren: een groene draak met roze bloemen en sterren uit zijn bek, en een kraanvogel met een blauwe gebreide muts en een bloemknop in zijn snavel",
+      "alt_en": "Brightly coloured diptych: a green dragon with pink flowers and stars from its mouth, and a crane in a blue knitted hat holding a flower bud in its beak"
     }
   ]
 }
