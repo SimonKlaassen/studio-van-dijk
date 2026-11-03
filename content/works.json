@@ -59,17 +59,6 @@
       "title": "Techno Waves VI",
       "title_en": "Techno Waves VI",
       "category": "Tekeningen",
-      "image": "img/tekeningen/tekening-6.jpg",
-      "technique": "Krijt op catalogusomslag",
-      "technique_en": "Chalk on a catalogue cover",
-      "price": "Op aanvraag",
-      "status": "Beschikbaar",
-      "alt": "Witte krijtarcering over een opengeslagen zwarte catalogusomslag met streepjescodes"
-    },
-    {
-      "title": "Techno Waves VII",
-      "title_en": "Techno Waves VII",
-      "category": "Tekeningen",
       "image": "img/tekeningen/tekening-9.jpg",
       "technique": "Verf op zwart papier",
       "technique_en": "Paint on black paper",
@@ -78,8 +67,8 @@
       "alt": "Witte verfstreken en kronkels op zwart papier, schuin over het blad"
     },
     {
-      "title": "Techno Waves VIII",
-      "title_en": "Techno Waves VIII",
+      "title": "Techno Waves VII",
+      "title_en": "Techno Waves VII",
       "category": "Tekeningen",
       "image": "img/tekeningen/tekening-10.jpg",
       "technique": "Krijt op zwart papier",
@@ -87,6 +76,17 @@
       "price": "Op aanvraag",
       "status": "Beschikbaar",
       "alt": "Witte krijtlijnen op zwart papier: verticale stammen en kluwens, doorkruist door een horizontale lijn"
+    },
+    {
+      "title": "Techno Waves VIII",
+      "title_en": "Techno Waves VIII",
+      "category": "Tekeningen",
+      "image": "img/tekeningen/tekening-6.jpg",
+      "technique": "Krijt op catalogusomslag",
+      "technique_en": "Chalk on a catalogue cover",
+      "price": "Op aanvraag",
+      "status": "Beschikbaar",
+      "alt": "Witte krijtarcering over een opengeslagen zwarte catalogusomslag met streepjescodes"
     },
     {
       "title": "Portretten (tweeluik)",
