@@ -164,6 +164,20 @@
       "status": "Beschikbaar",
       "alt": "Geglazuurde keramieken buste van een vrouw met gesloten ogen en lang blond haar, een blauwe nachtvlinder over haar mond, een parelketting en twee kleinere vlinders op haar hoofd en schouder",
       "alt_en": "Glazed ceramic bust of a woman with closed eyes and long blond hair, a blue moth over her mouth, a pearl necklace and two smaller moths on her head and shoulder"
+    },
+    {
+      "title": "Schildering in beweging",
+      "title_en": "Painting in motion",
+      "category": "Schilderkunst",
+      "video": "vid/schildering.mp4",
+      "image": "vid/schildering.jpg",
+      "featured": true,
+      "technique": "Video van een schildering",
+      "technique_en": "Video of a painting",
+      "price": "Op aanvraag",
+      "status": "Beschikbaar",
+      "alt": "Video: een schildering in wit, ijsblauw en donkerbruin, waarin de witte vlakken langzaam bewegen",
+      "alt_en": "Video: a painting in white, ice blue and dark brown in which the white areas slowly move"
     }
   ]
 }
