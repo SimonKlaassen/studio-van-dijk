@@ -7,7 +7,7 @@
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <title>Merel van Dijk</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400..500&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&display=swap">
 <style>
 /* Layout: quiet dark gallery — a fixed index column on the left, single works hung loosely down the right with lots of air */
 :root{
@@ -16,7 +16,7 @@
   --text:#d9d4cc;     /* primary */
   --quiet:#7d7770;    /* nav and captions */
   --rule:#2c2926;
-  --display:"Bebas Neue","Oswald","Arial Narrow",Impact,sans-serif;
+  --display:"Bodoni Moda","Bodoni 72","Didot",Georgia,serif;
   --sans:"Source Serif 4","Source Serif Pro",Georgia,"Times New Roman",serif;
   --serif:"Instrument Serif",Georgia,serif;
   color-scheme:dark;
@@ -44,12 +44,12 @@ aside{position:sticky;top:0;align-self:start;height:100vh;padding-block:1.6rem;d
 .top a,.cats a,.links a{text-decoration:none;font-size:1.06rem;letter-spacing:.005em;color:var(--quiet);font-weight:300;transition:color .2s}
 .top a:hover,.cats a:hover,.links a:hover,.cats a[aria-current="true"]{color:var(--text)}
 .brand{display:grid;gap:.5rem}
-.top a.name,.name{text-decoration:none;color:var(--text);font-family:var(--display);font-style:normal;font-weight:400;font-size:clamp(2.6rem,3.6vw,3.4rem);line-height:.95;letter-spacing:.02em}
+.top a.name,.name{text-decoration:none;color:var(--text);font-family:var(--display);font-style:normal;font-weight:400;text-transform:uppercase;font-size:clamp(1.35rem,1.8vw,1.75rem);line-height:1.2;letter-spacing:.16em}
 .studio{color:var(--quiet);font-weight:300;text-transform:uppercase;letter-spacing:.24em;font-size:.68rem}
 .cats{list-style:none;margin:0;padding:0;display:grid;gap:.75rem}
 .cats a::after{content:none}
 .links{display:grid;gap:.75rem}
-.motto{margin:auto 0 0;font-family:var(--display);font-weight:400;font-style:normal;font-size:clamp(2rem,2.8vw,2.8rem);line-height:1;letter-spacing:.03em;color:#6a645d}
+.motto{margin:auto 0 0;font-family:var(--display);font-weight:400;font-style:normal;text-transform:uppercase;font-size:clamp(1rem,1.3vw,1.25rem);line-height:1.5;letter-spacing:.2em;color:#6a645d}
 
 main{padding-block:clamp(3.5rem,6vw,5rem) 6rem;display:flex;flex-direction:column;gap:clamp(4rem,9vw,8rem);min-width:0}
 .work{margin:0;display:grid;gap:.7rem;max-width:100%}
@@ -68,7 +68,7 @@ main{padding-block:clamp(3.5rem,6vw,5rem) 6rem;display:flex;flex-direction:colum
 .tall.w3{width:min(100%,30rem)}
 
 .maint{max-width:38rem;align-self:flex-start;display:grid;gap:1rem;padding-block:clamp(2rem,10vh,7rem) 1rem}
-.maint h2{font-family:var(--display);font-weight:400;font-style:normal;font-size:clamp(2.6rem,5vw,4.2rem);line-height:1;letter-spacing:.02em;margin:0}
+.maint h2{font-family:var(--display);font-weight:400;font-style:normal;text-transform:uppercase;font-size:clamp(1.6rem,3vw,2.6rem);line-height:1.2;letter-spacing:.14em;margin:0}
 .maint p{margin:0;color:var(--quiet);max-width:34rem}
 .loading{color:var(--quiet);margin:0}
 .about{max-width:38rem;align-self:flex-end;display:grid;gap:1rem;scroll-margin-top:3rem}
@@ -98,7 +98,7 @@ input::placeholder,textarea::placeholder{color:#4f4a45}
 .buy-info{position:sticky;top:0;display:grid;gap:1.4rem;padding-top:.2rem}
 .close{all:unset;cursor:pointer;justify-self:end;color:var(--quiet);text-transform:uppercase;font-weight:300;letter-spacing:.2em;font-size:.72rem}
 .close:hover{color:var(--text)}
-.buy h2{font-family:var(--display);font-weight:400;font-style:normal;font-size:2.1rem;letter-spacing:.03em;margin:2rem 0 0;letter-spacing:0}
+.buy h2{font-family:var(--display);font-weight:400;font-style:normal;text-transform:uppercase;font-size:1.35rem;letter-spacing:.14em;margin:2rem 0 0;letter-spacing:0}
 .spec{margin:0;display:grid;grid-template-columns:auto 1fr;gap:.45rem 1.5rem;font-size:.88rem}
 .spec dt{color:var(--quiet)}
 .spec dd{margin:0}
@@ -127,14 +127,14 @@ textarea{min-height:4.5rem;resize:vertical}
   aside{position:sticky;top:env(safe-area-inset-top,0px);z-index:12;height:auto;display:block;padding-block:.9rem;margin-inline:calc(-1 * max(16px,env(safe-area-inset-left,0px)));padding-inline:max(16px,env(safe-area-inset-left,0px)) max(16px,env(safe-area-inset-right,0px));background:var(--ground)}
   .brandrow{display:flex;justify-content:space-between;align-items:center;gap:1rem;position:relative;z-index:13}
   .brand{gap:.3rem}
-  .top a.name,.name{font-size:2.1rem}
+  .top a.name,.name{font-size:1.3rem;letter-spacing:.14em}
   .studio{font-size:.68rem}
   .menubtn{display:block;background:none;border:1px solid var(--rule);color:var(--text);font:300 .8rem var(--sans);text-transform:uppercase;letter-spacing:.2em;font-size:.7rem;padding:.6rem .95rem;cursor:pointer;-webkit-tap-highlight-color:transparent}
   .menu{display:none}
   .menu.open{display:flex;flex-direction:column;gap:2.2rem;position:fixed;inset:0;z-index:11;background:var(--ground);overflow-y:auto;padding:calc(env(safe-area-inset-top,0px) + 6.5rem) max(16px,env(safe-area-inset-right,0px)) calc(env(safe-area-inset-bottom,0px) + 2rem) max(16px,env(safe-area-inset-left,0px))}
   .menu .cats,.menu .links{display:grid;gap:1rem}
   .menu .cats a,.menu .links a{font-size:1.45rem;color:var(--text)}
-  .menu .motto{margin-top:auto;font-size:1.9rem}
+  .menu .motto{margin-top:auto;font-size:1.05rem}
   body.menu-open{overflow:hidden}
   main{padding-top:1.6rem;gap:3rem}
   .work{width:100%!important;margin-right:0!important}
