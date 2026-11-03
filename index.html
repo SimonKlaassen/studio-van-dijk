@@ -169,7 +169,7 @@ textarea{min-height:4.5rem;resize:vertical}
       <li><a href="#textiel" data-cat="textiel" data-i18n="cat_textiel">Textiel</a></li>
     </ul>
     <div class="links"><a href="#over" data-i18n="nav_about">Over</a><a href="#aanvragen" data-i18n="nav_req">Aanvragen</a><a href="#contact" id="mailLink">Email</a><a href="#contact" id="igLink">Instagram</a></div>
-    <p class="motto">Droom in de branding.</p>
+    <p class="motto" hidden></p>
     </div>
   </aside>
 
@@ -328,7 +328,7 @@ function renderWorks(){
 fetch('content/works.json',{cache:'no-cache'}).then(r=>r.json()).then(d=>{WORKS=d.works||[];renderWorks();})
   .catch(()=>{const ld=document.getElementById('loading');ld.removeAttribute('data-i18n');ld.textContent=tr('load_err');});
 function renderSite(){const s=SITE;
-  const m=(LANG==='en'&&s.motto_en)||s.motto;if(m)document.querySelector('.motto').textContent=m;
+  const m=(LANG==='en'&&s.motto_en)||s.motto,mt=document.querySelector('.motto');mt.textContent=m||'';mt.hidden=!m;
   const mail=document.getElementById('mailLink'),ig=document.getElementById('igLink'),c=document.getElementById('contact');
   const bits=[];
   if(s.email){mail.href='mailto:'+s.email;bits.push(tr('mail_lbl')+': '+s.email);}
