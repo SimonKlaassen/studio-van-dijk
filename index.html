@@ -235,6 +235,12 @@ html[lang="nl"] .en,html[lang="en"] .nl{display:none}
 .doc p{color:var(--quiet);margin:0 0 .6rem}
 /* Works: no selection, dragging or iOS long-press save menu */
 .work img,.work video,.buy-img img,.buy-img video,.bduo img{-webkit-user-drag:none;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none}
+
+/* Subtle watermark on every work, also in the white view (visible in screenshots) */
+.work>button::after,.bduo::after,.spin::after{content:"\00a9  Studio van Dijk";position:absolute;right:.7em;bottom:.6em;z-index:2;pointer-events:none;
+  font:400 clamp(10px,.8vw,12px)/1 "Helvetica Neue",Helvetica,Arial,sans-serif;letter-spacing:.12em;color:rgba(255,255,255,.78);text-shadow:0 0 2px rgba(0,0,0,.55),0 0 6px rgba(0,0,0,.35);white-space:nowrap}
+.bduo{display:inline-flex;position:relative}
+.work>button:has(.badge360)::after{bottom:.6em}
 </style>
 </head>
 <body>
