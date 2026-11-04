@@ -6,6 +6,8 @@
 <meta name="description" content="Studio van Dijk is het atelier van Merel van Dijk: tekeningen, schilderkunst, keramiek, fotografie en handbeschilderde champagneflessen. Werk kopen of een opdracht aanvragen.">
 <link rel="canonical" href="https://studiovandijk.eu/">
 <meta name="author" content="Merel van Dijk">
+<meta name="copyright" content="© Merel van Dijk">
+<meta name="robots" content="noai, noimageai">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Studio van Dijk">
@@ -222,6 +224,17 @@ html.buy-open .bgtex{display:none}
 .buy{isolation:isolate}
 
 
+
+/* Language blocks for the legal pages */
+html[lang="nl"] .en,html[lang="en"] .nl{display:none}
+.legal{margin:1.2rem 0 0;color:var(--quiet);font-size:11px!important}
+.legal a{color:var(--quiet);text-decoration:none}
+.legal a:hover{color:var(--text)}
+.doc{max-width:38rem;align-self:flex-start}
+.doc h3{font-weight:400;font-size:13px;margin:1.1rem 0 .2rem;color:var(--text)}
+.doc p{color:var(--quiet);margin:0 0 .6rem}
+/* Works: no selection, dragging or iOS long-press save menu */
+.work img,.work video,.buy-img img,.buy-img video,.bduo img{-webkit-user-drag:none;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none}
 </style>
 </head>
 <body>
@@ -246,6 +259,7 @@ html.buy-open .bgtex{display:none}
       <li><a href="#champagne" data-cat="champagne" data-i18n="cat_champagne">Champagne</a></li>
     </ul>
     <div class="links"><a href="#over" data-i18n="nav_about">Over</a><a href="#aanvragen" data-i18n="nav_req">Aanvragen</a><a href="#contact" id="mailLink">Email</a><a href="#contact" id="igLink">Instagram</a></div>
+    <p class="legal">© <span id="yr">2026</span> Merel van Dijk · <a href="#privacy">Privacy</a> · <a href="#auteursrecht"><span class="nl">Auteursrecht</span><span class="en">Copyright</span></a></p>
     <p class="motto" hidden></p>
     </div>
   </aside>
@@ -253,6 +267,66 @@ html.buy-open .bgtex{display:none}
   <main id="wall">
     <p class="loading" id="loading" data-i18n="loading">Werken laden…</p>
     <section class="catview" id="catview" hidden><h2 class="cathead" id="catHead"></h2><div class="row" id="row"></div></section>
+    <section class="about doc" id="privacy" hidden>
+      <div class="nl">
+        <h2>Privacyverklaring</h2>
+        <p class="q">Laatst bijgewerkt: 4 november 2026</p>
+        <h3>Wie zijn wij</h3>
+        <p>Studio van Dijk is het atelier van kunstenaar Merel van Dijk. Zij is verantwoordelijk voor de gegevens die via deze website worden verwerkt. Vragen over privacy kun je stellen via <span class="contactmail">het aanvraagformulier op deze site</span>.</p>
+        <h3>Welke gegevens en waarom</h3>
+        <p>Als je een werk wilt kopen of een opdracht aanvraagt, vragen we je naam, e-mailadres en je bericht, en bij een opdracht eventueel formaat en budget. We gebruiken deze gegevens alleen om je aanvraag te beantwoorden, een prijs af te spreken en een verkoop af te handelen. We verkopen of delen je gegevens niet voor marketing.</p>
+        <h3>Hoe lang</h3>
+        <p>Aanvragen die niet tot een koop leiden, bewaren we maximaal één jaar. Gegevens over een verkoop bewaren we zeven jaar, omdat de wet dat voor de administratie verplicht.</p>
+        <h3>Cookies en opslag</h3>
+        <p>Deze site gebruikt geen cookies en geen tracking. Je browser onthoudt alleen je taalkeuze en of je de intro al hebt gezien. Die gegevens blijven op je eigen apparaat.</p>
+        <h3>Diensten van anderen</h3>
+        <p>De site staat bij GitHub Pages, dat voor beveiliging tijdelijk IP-adressen registreert. Het lettertype van de naam komt van Adobe Fonts; daarbij ziet Adobe je IP-adres, maar Adobe zet geen tracking-cookies.</p>
+        <h3>Je rechten</h3>
+        <p>Je kunt vragen welke gegevens we van je hebben, en ze laten verbeteren of verwijderen. Ben je het niet eens met hoe we met je gegevens omgaan, dan kun je een klacht indienen bij de Autoriteit Persoonsgegevens.</p>
+      </div>
+      <div class="en">
+        <h2>Privacy statement</h2>
+        <p class="q">Last updated: 4 November 2026</p>
+        <h3>Who we are</h3>
+        <p>Studio van Dijk is the studio of artist Merel van Dijk. She is responsible for the personal data processed through this website. For privacy questions, contact us via <span class="contactmail">the enquiry form on this site</span>.</p>
+        <h3>What data and why</h3>
+        <p>If you want to buy a work or request a commission, we ask for your name, email address and message, and for a commission possibly the size and budget. We only use this to answer your enquiry, agree on a price and complete a sale. We never sell or share your data for marketing.</p>
+        <h3>How long</h3>
+        <p>Enquiries that don't lead to a sale are kept for at most one year. Sales records are kept for seven years, as Dutch law requires for bookkeeping.</p>
+        <h3>Cookies and storage</h3>
+        <p>This site uses no cookies and no tracking. Your browser only remembers your language choice and whether you've seen the intro. That stays on your own device.</p>
+        <h3>Third-party services</h3>
+        <p>The site is hosted by GitHub Pages, which logs IP addresses temporarily for security. The typeface of the name comes from Adobe Fonts; Adobe sees your IP address but sets no tracking cookies.</p>
+        <h3>Your rights</h3>
+        <p>You can ask which data we hold about you, and have it corrected or deleted. If you disagree with how we handle your data, you can file a complaint with the Dutch Data Protection Authority (Autoriteit Persoonsgegevens).</p>
+      </div>
+    </section>
+    <section class="about doc" id="auteursrecht" hidden>
+      <div class="nl">
+        <h2>Auteursrecht</h2>
+        <p>Alle werken, foto's, video's en teksten op deze website zijn © Merel van Dijk. Het auteursrecht ontstaat automatisch op grond van de Auteurswet en blijft bij de kunstenaar.</p>
+        <h3>Niet toegestaan zonder schriftelijke toestemming</h3>
+        <p>Beelden of teksten van deze site kopiëren, downloaden, opnieuw publiceren, bewerken, afdrukken, op producten zetten of gebruiken voor reclame. Ook het gebruik van de werken om AI-modellen te trainen of beelden te genereren is niet toegestaan.</p>
+        <h3>Wel toegestaan</h3>
+        <p>Een link naar deze website delen, met vermelding van Merel van Dijk.</p>
+        <h3>Bij aankoop</h3>
+        <p>Koop je een werk, dan word je eigenaar van het fysieke werk. Het auteursrecht blijft bij Merel van Dijk, tenzij jullie schriftelijk iets anders afspreken.</p>
+        <h3>Toestemming of inbreuk</h3>
+        <p>Wil je een beeld gebruiken voor een publicatie of samenwerking, of zie je werk van Merel zonder toestemming online staan? Laat het weten via <span class="contactmail">het aanvraagformulier op deze site</span>.</p>
+      </div>
+      <div class="en">
+        <h2>Copyright</h2>
+        <p>All works, photographs, videos and texts on this website are © Merel van Dijk. Copyright arises automatically under Dutch copyright law and remains with the artist.</p>
+        <h3>Not permitted without written permission</h3>
+        <p>Copying, downloading, republishing, editing or printing images or texts from this site, putting them on products, or using them in advertising. Using the works to train AI models or to generate images is not permitted either.</p>
+        <h3>Permitted</h3>
+        <p>Sharing a link to this website, crediting Merel van Dijk.</p>
+        <h3>When you buy a work</h3>
+        <p>When you buy a work, you own the physical piece. Copyright stays with Merel van Dijk unless agreed otherwise in writing.</p>
+        <h3>Permission or infringement</h3>
+        <p>Would you like to use an image for a publication or collaboration, or have you seen Merel's work online without permission? Let us know via <span class="contactmail">the enquiry form on this site</span>.</p>
+      </div>
+    </section>
     <section class="about" id="over">
       <h2 data-i18n="about_h">Over Merel</h2>
       <p data-i18n="about_p">Merel van Dijk is een ervaren kunstenaar in schilderkunst en keramiek. Fotografie is haar manier van kijken: ze gaat dicht op rots, water en zand staan, tot er alleen structuur overblijft.</p>
@@ -384,6 +458,7 @@ function route(){
     const any=works.some(w=>w.dataset.cat===cat);document.getElementById('row').dataset.empty=any?'':'1';}
   const about=document.getElementById('over'),req=document.getElementById('aanvragen');
   about.hidden=!(h==='over'||h==='contact');req.hidden=h!=='aanvragen';
+  document.getElementById('privacy').hidden=h!=='privacy';document.getElementById('auteursrecht').hidden=h!=='auteursrecht';
   document.querySelectorAll('.cats a').forEach(a=>a.setAttribute('aria-current',a.dataset.cat===cat?'true':'false'));
   scrollTo(0,0);
 }
@@ -420,6 +495,7 @@ function renderSite(){const s=SITE;
   const m=(LANG==='en'&&s.motto_en)||s.motto,mt=document.querySelector('.motto');mt.textContent=m||'';mt.hidden=!m;
   const mail=document.getElementById('mailLink'),ig=document.getElementById('igLink'),c=document.getElementById('contact');
   const bits=[];
+  if(s.email)document.querySelectorAll('.contactmail').forEach(e=>{e.textContent=s.email;});
   if(s.email){mail.href='mailto:'+s.email;bits.push(tr('mail_lbl')+': '+s.email);}
   if(s.instagram){const h=s.instagram.replace(/^@/,'').replace(/^https?:\/\/(www\.)?instagram\.com\//,'').replace(/\/$/,'');ig.href='https://www.instagram.com/'+h+'/';ig.target='_blank';ig.rel='noopener';bits.push('Instagram: @'+h);}
   if(bits.length){c.removeAttribute('data-i18n');c.textContent=bits.join(' · ');}
@@ -463,6 +539,9 @@ function show(f){if(!spin)return;spin.f=((Math.round(f)%spin.n)+spin.n)%spin.n;s
 function setTheme(c){let m=document.querySelector('meta[name=theme-color]');if(!m){m=document.createElement('meta');m.name='theme-color';document.head.appendChild(m);}m.content=c;}
 setTheme('#141312');
 
+// Make casual saving of the works harder: no right-click menu, dragging or long-press save on images and video
+document.addEventListener('contextmenu',e=>{if(e.target.closest('.work,.buy-img,.bduo'))e.preventDefault();});
+document.addEventListener('dragstart',e=>{if(e.target.closest('.work,.buy-img,.bduo'))e.preventDefault();});
 // Purchase panel
 const buy=document.getElementById('buy'),f=document.getElementById('bForm'),done=document.getElementById('bDone'),bBuy=document.getElementById('bBuy');
 let last=null;
