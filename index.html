@@ -241,6 +241,10 @@ html[lang="nl"] .en,html[lang="en"] .nl{display:none}
   font:400 clamp(10px,.8vw,12px)/1 "Helvetica Neue",Helvetica,Arial,sans-serif;letter-spacing:.12em;color:rgba(255,255,255,.78);text-shadow:0 0 2px rgba(0,0,0,.55),0 0 6px rgba(0,0,0,.35);white-space:nowrap}
 .bduo{display:inline-flex;position:relative}
 .work>button:has(.badge360)::after{bottom:.6em}
+
+/* 'wide': shown at the full width of the column, whatever its shape */
+.row .work.wide{flex-basis:100%}
+.row .work.wide img,.row .work.wide video{width:100%!important;height:auto!important;max-height:none!important}
 </style>
 </head>
 <body>
@@ -446,7 +450,7 @@ function workHTML(w){
   else if(w.image2){media=`<span class="duo"><img src="${esc(rel(w.image))}" alt="${esc(w.alt||w.title)}" loading="lazy" decoding="async"><img src="${esc(rel(w.image2))}" alt="" loading="lazy" decoding="async"></span>`;}
   else{media=`<img src="${esc(rel(w.image))}" alt="${esc(w.alt||w.title)}" loading="lazy" decoding="async">`+(w.spin?'<span class="badge360">360°</span>':'');}
   const extra=(w.image2?` data-img2="${esc(rel(w.image2))}"`:'')+(w.video?` data-video="${esc(rel(w.video))}"`:'')+(w.spin?` data-spin="${esc(rel(w.spin))}" data-frames="${+w.frames||36}"`:'');
-  return `<figure class="work${w.featured?' feat':''}" ${data}${extra}><button type="button" aria-label="${esc(w.title)}, ${tr(sold?'view':'view_buy')}">${media}</button><figcaption><span>${esc(w.title)}</span><span>${right}</span></figcaption></figure>`;
+  return `<figure class="work${w.featured?' feat':''}${w.wide?' wide':''}" ${data}${extra}><button type="button" aria-label="${esc(w.title)}, ${tr(sold?'view':'view_buy')}">${media}</button><figcaption><span>${esc(w.title)}</span><span>${right}</span></figcaption></figure>`;
 }
 let works=[];
 // Category filter via #hash

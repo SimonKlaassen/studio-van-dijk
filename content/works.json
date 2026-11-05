@@ -166,7 +166,23 @@
       "status": "Beschikbaar",
       "alt": "Een toren van gestapelde keramieken vormen en stenen, in een baai tussen gele kliffen aan zee",
       "alt_en": "A tower of stacked ceramic forms and stones in a cove between yellow cliffs by the sea",
-      "solo": true
+      "solo": true,
+      "wide": true
+    },
+    {
+      "title": "Paard",
+      "title_en": "Horse",
+      "category": "Keramiek",
+      "image": "img/keramiek/paard.jpg",
+      "featured": true,
+      "solo": true,
+      "wide": true,
+      "technique": "Geglazuurde keramiek",
+      "technique_en": "Glazed ceramics",
+      "price": "Op aanvraag",
+      "status": "Beschikbaar",
+      "alt": "Keramieken paard met lange gegroefde manen en een gespikkeld wit, groen en zwart glazuur, met een wit koord, op een jute vloerkleed voor een linnen gordijn",
+      "alt_en": "Ceramic horse with a long ridged mane and speckled white, green and black glaze, with a white cord, on a jute rug in front of a linen curtain"
     },
     {
       "title": "Buste met nachtvlinders",
