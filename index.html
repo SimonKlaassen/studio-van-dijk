@@ -245,6 +245,11 @@ html[lang="nl"] .en,html[lang="en"] .nl{display:none}
 /* 'wide': shown at the full width of the column, whatever its shape */
 .row .work.wide{flex-basis:100%}
 .row .work.wide img,.row .work.wide video{width:100%!important;height:auto!important;max-height:none!important}
+
+/* Front page work */
+.row.home .work.wide{flex-basis:auto;width:auto!important}
+.row.home .work.wide img,.row.home .work.wide video{width:auto!important;height:min(82vh,900px)!important;max-width:100%!important}
+@media (max-width:820px){.row.home .work.wide img{width:100%!important;height:auto!important}}
 </style>
 </head>
 <body>
@@ -444,7 +449,7 @@ function workHTML(w){
   const cat=CATS[w.category]||'schilderkunst',sold=w.status==='Verkocht',catLbl=tr('cat_'+cat);
   w={...w,title:L(w,'title'),technique:L(w,'technique'),alt:L(w,'alt'),category:catLbl,price:priceTxt(w.price)};
   const right=sold?esc(tr('sold')):'';
-  const data=`data-cat="${cat}" data-catlabel="${esc(w.category)}" data-tech="${esc(w.technique)}" data-t="${esc(w.title)}" data-price="${esc(w.price||'Op aanvraag')}" data-status="${esc(w.status||'Beschikbaar')}"`;
+  const data=`${w.home?'data-home="1" ':''}data-cat="${cat}" data-catlabel="${esc(w.category)}" data-tech="${esc(w.technique)}" data-t="${esc(w.title)}" data-price="${esc(w.price||'Op aanvraag')}" data-status="${esc(w.status||'Beschikbaar')}"`;
   let media;
   if(w.video){const v=`<video data-src="${esc(rel(w.video))}" ${w.image?`poster="${esc(rel(w.image))}"`:''} muted loop playsinline autoplay preload="metadata" aria-label="${esc(w.alt||w.title)}"></video>`;media=w.image2?`<span class="duo">${v}<img src="${esc(rel(w.image2))}" alt="" loading="lazy" decoding="async"></span>`:v;}
   else if(w.image2){media=`<span class="duo"><img src="${esc(rel(w.image))}" alt="${esc(w.alt||w.title)}" loading="lazy" decoding="async"><img src="${esc(rel(w.image2))}" alt="" loading="lazy" decoding="async"></span>`;}
@@ -460,10 +465,14 @@ function route(){
   const cats=['schilderkunst','fotografie','video','keramiek','tekeningen','textiel','champagne'];
   const cat=cats.includes(h)?h:null;
   // Front page shows no works; a category shows its works side by side under its heading
-  works.forEach(w=>{w.hidden=!cat||w.dataset.cat!==cat;});
+  // Works marked 'home' are shown on the front page
+  const home=!cat&&(!h||h==='alles');
+  works.forEach(w=>{w.hidden=home?!w.dataset.home:(!cat||w.dataset.cat!==cat);});
+  document.getElementById('row').classList.toggle('home',home);
   document.querySelectorAll('.rowbreak').forEach(s=>{s.hidden=s.dataset.cat!==cat;});
   document.getElementById('row').classList.toggle('single',works.filter(w=>!w.hidden).length===1);
-  const cv=document.getElementById('catview');cv.hidden=!cat;
+  const cv=document.getElementById('catview');cv.hidden=!(cat||home&&works.some(w=>w.dataset.home));
+  if(home){const hd=document.getElementById('catHead');hd.removeAttribute('data-i18n');hd.textContent='';}
   if(cat){const hd=document.getElementById('catHead');hd.dataset.i18n='cat_'+cat;hd.textContent=tr('cat_'+cat);
     const any=works.some(w=>w.dataset.cat===cat);document.getElementById('row').dataset.empty=any?'':'1';}
   const about=document.getElementById('over'),req=document.getElementById('aanvragen');

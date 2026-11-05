@@ -182,7 +182,8 @@
       "price": "Op aanvraag",
       "status": "Beschikbaar",
       "alt": "Keramieken paard met lange gegroefde manen en een gespikkeld wit, groen en zwart glazuur, met een wit koord, op een jute vloerkleed voor een linnen gordijn",
-      "alt_en": "Ceramic horse with a long ridged mane and speckled white, green and black glaze, with a white cord, on a jute rug in front of a linen curtain"
+      "alt_en": "Ceramic horse with a long ridged mane and speckled white, green and black glaze, with a white cord, on a jute rug in front of a linen curtain",
+      "home": true
     },
     {
       "title": "Buste met nachtvlinders",

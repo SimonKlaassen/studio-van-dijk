@@ -65,6 +65,7 @@ collections:
                 hint: "Alleen als het werk uit twee delen bestaat; ze staan dan naast elkaar als één werk."
               - { name: featured, label: Groot bovenaan, widget: boolean, required: false, default: false, hint: "Toon dit werk over de hele breedte bovenaan de categorie." }
               - { name: solo, label: Alleen op eigen regel, widget: boolean, required: false, default: false, hint: "Samen met Groot bovenaan: dit werk staat groot op een eigen regel." }
+              - { name: home, label: Op de voorpagina, widget: boolean, required: false, default: false, hint: "Toon dit werk ook groot op de voorpagina." }
               - name: video
                 label: Video
                 widget: file
