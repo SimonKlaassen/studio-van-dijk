@@ -250,6 +250,9 @@ html[lang="nl"] .en,html[lang="en"] .nl{display:none}
 .row.home .work.wide{flex-basis:auto;width:auto!important}
 .row.home .work.wide img,.row.home .work.wide video{width:auto!important;height:min(82vh,900px)!important;max-width:100%!important}
 @media (max-width:820px){.row.home .work.wide img{width:100%!important;height:auto!important}}
+
+/* A large landscape video keeps some air on the right, as agreed */
+@media (min-width:821px){.row .work.feat.solo:has(video){width:min(80%,1000px)!important;flex:0 0 auto}.row .work.feat.solo video{width:100%!important;height:auto!important;max-height:70vh!important}}
 </style>
 </head>
 <body>

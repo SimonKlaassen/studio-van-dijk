@@ -211,7 +211,68 @@
       "price": "Op aanvraag",
       "status": "Beschikbaar",
       "alt": "Video: een schildering in wit, ijsblauw en donkerbruin, waarin de witte vlakken langzaam bewegen",
-      "alt_en": "Video: a painting in white, ice blue and dark brown in which the white areas slowly move"
+      "alt_en": "Video: a painting in white, ice blue and dark brown in which the white areas slowly move",
+      "solo": true
+    },
+    {
+      "title": "Zwart strand",
+      "title_en": "Black beach",
+      "category": "Schilderkunst",
+      "image": "img/schilderkunst/zwart-strand.jpg",
+      "technique": "Olieverf op doek",
+      "technique_en": "Oil on canvas",
+      "price": "Op aanvraag",
+      "status": "Beschikbaar",
+      "alt": "Olieverfschilderij van een zwart strand met witte golven onder roodbruine kliffen en een bleke maan",
+      "alt_en": "Oil painting of a black beach with white waves below red-brown cliffs and a pale moon"
+    },
+    {
+      "title": "Palmen",
+      "title_en": "Palms",
+      "category": "Schilderkunst",
+      "image": "img/schilderkunst/palmen-tuin.jpg",
+      "technique": "Olieverf op doek",
+      "technique_en": "Oil on canvas",
+      "price": "Op aanvraag",
+      "status": "Beschikbaar",
+      "alt": "Olieverfschilderij van palmen in een groene tuin, met onbeschilderd doek bovenaan en een okergele strook onderaan",
+      "alt_en": "Oil painting of palms in a green garden, with bare canvas at the top and an ochre band at the bottom"
+    },
+    {
+      "title": "Stenen onder water",
+      "title_en": "Stones under water",
+      "category": "Schilderkunst",
+      "image": "img/schilderkunst/stenen-onder-water.jpg",
+      "technique": "Olieverf op doek",
+      "technique_en": "Oil on canvas",
+      "price": "Op aanvraag",
+      "status": "Beschikbaar",
+      "alt": "Olieverfschilderij van lichte stenen onder stromend water in groen, oker en blauw",
+      "alt_en": "Oil painting of pale stones under flowing water in green, ochre and blue"
+    },
+    {
+      "title": "Rots in de branding",
+      "title_en": "Rock in the surf",
+      "category": "Schilderkunst",
+      "image": "img/schilderkunst/rots-in-de-branding.jpg",
+      "technique": "Olieverf op doek",
+      "technique_en": "Oil on canvas",
+      "price": "Op aanvraag",
+      "status": "Beschikbaar",
+      "alt": "Olieverfschilderij van een groene rots in witte branding met een oranje gloed",
+      "alt_en": "Oil painting of a green rock in white surf with an orange glow"
+    },
+    {
+      "title": "Koraalsteen",
+      "title_en": "Coral stone",
+      "category": "Schilderkunst",
+      "image": "img/schilderkunst/koraalsteen.jpg",
+      "technique": "Olieverf op doek",
+      "technique_en": "Oil on canvas",
+      "price": "Op aanvraag",
+      "status": "Beschikbaar",
+      "alt": "Olieverfschilderij van een lichte, poreuze koraalsteen tegen donkerrode en groene rotsen",
+      "alt_en": "Oil painting of a pale, porous coral stone against dark red and green rocks"
     },
     {
       "title": "Merel aan het werk",
