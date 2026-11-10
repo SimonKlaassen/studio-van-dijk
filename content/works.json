@@ -303,8 +303,8 @@
       "video": "vid/champagne-fles.mp4"
     },
     {
-      "title": "Kopje",
-      "title_en": "Bowl",
+      "title": "Kopje I",
+      "title_en": "Bowl I",
       "category": "Experiment",
       "image": "img/experiment/kopje/00.jpg",
       "featured": true,
@@ -317,6 +317,22 @@
       "alt_en": "Ceramic bowl with a dimpled outside and pale glaze inside",
       "spin": "img/experiment/kopje",
       "frames": 34
+    },
+    {
+      "title": "Kopje II",
+      "title_en": "Bowl II",
+      "category": "Experiment",
+      "image": "img/experiment/kopje-ii/00.jpg",
+      "featured": true,
+      "solo": true,
+      "technique": "Keramiek, geglazuurd",
+      "technique_en": "Glazed ceramics",
+      "price": "Op aanvraag",
+      "status": "Beschikbaar",
+      "alt": "Keramische schaal met grillige, puntige rand, okergele glazuur binnenin en een roestbruine, poreuze buitenkant",
+      "alt_en": "Ceramic bowl with a jagged, pointed rim, ochre-yellow glaze inside and a rust-brown, porous outside",
+      "spin": "img/experiment/kopje-ii",
+      "frames": 42
     }
   ]
 }
