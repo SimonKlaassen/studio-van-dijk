@@ -301,6 +301,34 @@
       "alt": "Tweeluik: video van een hand die de beschilderde fles ronddraait, en de fles op een houten tafel",
       "alt_en": "Diptych: video of a hand turning the painted bottle, and the bottle on a wooden table",
       "video": "vid/champagne-fles.mp4"
+    },
+    {
+      "title": "Kopje 1",
+      "title_en": "Bowl 1",
+      "category": "Experiment",
+      "image": "img/experiment/kopje-1/00.jpg",
+      "technique": "Keramiek, geglazuurd",
+      "technique_en": "Glazed ceramics",
+      "price": "Op aanvraag",
+      "status": "Beschikbaar",
+      "alt": "Keramisch kopje 1 met gedeukte buitenkant en lichte glazuur binnenin",
+      "alt_en": "Ceramic bowl 1 with a dimpled outside and pale glaze inside",
+      "spin": "img/experiment/kopje-1",
+      "frames": 13
+    },
+    {
+      "title": "Kopje 2",
+      "title_en": "Bowl 2",
+      "category": "Experiment",
+      "image": "img/experiment/kopje-2/00.jpg",
+      "technique": "Keramiek, geglazuurd",
+      "technique_en": "Glazed ceramics",
+      "price": "Op aanvraag",
+      "status": "Beschikbaar",
+      "alt": "Keramisch kopje 2 met gedeukte buitenkant en lichte glazuur binnenin",
+      "alt_en": "Ceramic bowl 2 with a dimpled outside and pale glaze inside",
+      "spin": "img/experiment/kopje-2",
+      "frames": 21
     }
   ]
 }
